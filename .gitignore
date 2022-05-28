@@ -1,0 +1,45 @@
+# Dependencies
+node_modules
+
+# Configs
+
+# Caches
+.eslintcache
+.next
+out
+
+# Testings
+coverage
+
+# Builds
+build
+dist
+
+# Miscellaneous
+.DS_Store
+.env
+.env.*
+.npmrc
+*-lock.json
+*.lock
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vercel
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Types
+
+# Ignores

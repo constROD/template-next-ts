@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+
+# Configs
+commitlint.config.js
+
+# Caches
+.eslintcache
+.vscode
+
+# Testings
+coverage
+
+# Builds
+build
+dist
+
+# Miscellaneous
+.DS_Store
+.env
+.env.*
+.npmrc
+*-lock.json
+*.lock
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Types
+
+# Ignores
