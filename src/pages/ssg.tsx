@@ -1,8 +1,13 @@
 import axios from 'axios';
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import React from 'react';
+import { ITodo } from 'shared/interfaces/Todo';
 
-export async function getStaticProps() {
+interface Props {
+  todos: ITodo[];
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const { data: todos } = await axios(
     'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
   );
@@ -10,15 +15,15 @@ export async function getStaticProps() {
   return {
     props: { todos }, // It will be passed as props in the component
   };
-}
+};
 
-const SSGPage: NextPage = ({ todos }: any) => {
+const SSGPage: NextPage<Props> = ({ todos }) => {
   return (
     <React.Fragment>
       <h1>SSG Page</h1>
 
       <ul>
-        {(todos || []).map((todo: any) => (
+        {(todos || []).map(todo => (
           <li
             key={todo.id}
             style={{ display: 'grid', gridTemplateColumns: '5vw 40vw auto', alignItems: 'center' }}
