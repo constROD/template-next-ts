@@ -26,7 +26,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     height: 100%;
     width: 100%;
-    -webkit-tap-highlight-color: transparent;
   }
 
   #__next {
@@ -36,5 +35,10 @@ export const GlobalStyle = createGlobalStyle`
   
   *, *::before, *::after {
     box-sizing: border-box;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
   }
 `;
