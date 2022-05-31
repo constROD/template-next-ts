@@ -21,18 +21,15 @@ export const theme = (): ITheme => ({ colors, screens });
 export const ThemeProvider = SThemeProvider;
 export const styled: ThemedStyledInterface<ITheme> = defaultStyled;
 export const GlobalStyle = createGlobalStyle`
-  html, body {
-    background: #FAFDFF;
+ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  #root {
+  #__next {
     display: grid;
     height: 100%;
   }
