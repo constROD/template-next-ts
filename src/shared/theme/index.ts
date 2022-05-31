@@ -21,7 +21,7 @@ export const theme = (): ITheme => ({ colors, screens });
 export const ThemeProvider = SThemeProvider;
 export const styled: ThemedStyledInterface<ITheme> = defaultStyled;
 export const GlobalStyle = createGlobalStyle`
- html, body {
+  html, body {
     padding: 0;
     margin: 0;
     height: 100%;
