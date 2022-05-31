@@ -31,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   #__next {
     display: grid;
     height: 100%;
+    
   }
   
   *, *::before, *::after {
