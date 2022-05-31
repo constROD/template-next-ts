@@ -16,7 +16,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "clean": "rm -rf ./next && rm -rf ./out",
+    "clean": "rm -rf ./build && rm -rf ./out",
     "build": "yarn clean && next build",
     "preview": "next start",
     "start": "next start",

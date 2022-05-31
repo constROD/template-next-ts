@@ -2,18 +2,21 @@
 node_modules
 
 # Configs
+Dockerfile
+jest.*.ts
+*.config.js
+*.config.ts
+*.html
 
 # Caches
 .eslintcache
+.vscode
 .next
 out
 
 # Testings
 coverage
-cypress/videos
-cypress/screenshots/
-cypress/snapshots/actual/
-cypress/snapshots/diff/
+cypress
 
 # Builds
 build
@@ -24,6 +27,7 @@ dist
 .env
 .env.*
 .npmrc
+*-lock.json
 *.lock
 .idea
 *.suo
@@ -44,5 +48,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Types
+global.d.ts
+next-env.d.ts
 
 # Ignores
+.dockerignore
+.prettierignore
+.eslintignore

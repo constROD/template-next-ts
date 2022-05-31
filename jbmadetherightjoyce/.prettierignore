@@ -2,18 +2,14 @@
 node_modules
 
 # Configs
+commitlint.config.js
 
 # Caches
 .eslintcache
-.next
-out
+.vscode
 
 # Testings
 coverage
-cypress/videos
-cypress/screenshots/
-cypress/snapshots/actual/
-cypress/snapshots/diff/
 
 # Builds
 build
@@ -24,6 +20,7 @@ dist
 .env
 .env.*
 .npmrc
+*-lock.json
 *.lock
 .idea
 *.suo
@@ -31,8 +28,6 @@ dist
 *.njsproj
 *.sln
 *.sw?
-.vercel
-*.tsbuildinfo
 
 # Logs
 logs

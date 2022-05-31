@@ -2,18 +2,18 @@
 node_modules
 
 # Configs
+commitlint.config.js
+jest.*.ts
+Dockerfile
 
 # Caches
 .eslintcache
+.vscode
 .next
 out
 
 # Testings
 coverage
-cypress/videos
-cypress/screenshots/
-cypress/snapshots/actual/
-cypress/snapshots/diff/
 
 # Builds
 build
@@ -24,6 +24,7 @@ dist
 .env
 .env.*
 .npmrc
+*-lock.json
 *.lock
 .idea
 *.suo
@@ -46,3 +47,6 @@ lerna-debug.log*
 # Types
 
 # Ignores
+.dockerignore
+.prettierignore
+.eslintignore
