@@ -25,6 +25,7 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
   "rules": {
     "react/prop-types": "off",
+    "react/display-name": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-prototype-builtins": "off",
