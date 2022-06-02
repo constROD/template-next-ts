@@ -4,7 +4,7 @@ import { theme, GlobalStyle, ThemeProvider } from 'shared/theme';
 
 import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
       <Head>
@@ -38,5 +38,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </React.Fragment>
   );
 }
-
-export default MyApp;
