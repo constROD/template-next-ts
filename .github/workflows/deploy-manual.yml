@@ -9,7 +9,7 @@ jobs:
   #       with:
   #         ref: develop
 
-  #     - name: Setup node Version
+  #     - name: Setup Node Version
   #       uses: actions/setup-node@v1
   #       with:
   #         node-version: 17.3.0
