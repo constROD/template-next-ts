@@ -9,10 +9,10 @@ jobs:
   #       with:
   #         ref: develop
 
-  #     - name: Setup next Version
-  #       uses: actions/setup-next@v1
+  #     - name: Setup node Version
+  #       uses: actions/setup-node@v1
   #       with:
-  #         next-version: 17.3.0
+  #         node-version: 17.3.0
 
   #     - name: Run ESLint and Test
   #       run: |
