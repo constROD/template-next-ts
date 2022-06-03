@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GetStaticProps, NextPage } from 'next';
+import { GetStaticPropsResult, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { ITodo } from 'shared/interfaces/Todo';
 
@@ -7,13 +7,16 @@ interface Props {
   todos: ITodo[];
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async (): Promise<
+  GetStaticPropsResult<Props>
+> => {
   const { data: todos } = await axios(
     'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
   );
 
   return {
-    props: { todos }, // It will be passed as props in the component
+    props: { todos }, // todos object will be pass as props in the component.
+    revalidate: 1, // It will update the page every 1 second
   };
 };
 
