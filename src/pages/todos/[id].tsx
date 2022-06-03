@@ -2,6 +2,7 @@ import axios from 'axios';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import React from 'react';
 import { ITodo } from 'shared/interfaces/Todo';
+import { styled } from 'shared/theme';
 
 interface Props {
   todo: ITodo;
@@ -31,16 +32,18 @@ export const getStaticProps: GetStaticProps<Props> = async (context: GetStaticPr
   };
 };
 
+const TodoPageWrapper = styled.div``;
+
 const TodoPage: NextPage<Props> = ({ todo }) => {
   return (
-    <div>
+    <TodoPageWrapper>
       <h1>Todo {todo.id}</h1>
       <ul>
         <li>ID: {todo.id}</li>
         <li>TODO: {todo.title}</li>
         <li>STATUS: {todo.completed ? 'Done' : 'Pending'}</li>
       </ul>
-    </div>
+    </TodoPageWrapper>
   );
 };
 
