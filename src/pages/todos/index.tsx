@@ -1,15 +1,22 @@
 import axios from 'axios';
-import { NextPage } from 'next';
+import { GetStaticProps, GetStaticPropsResult, NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
+import { ITodo } from 'shared/interfaces/Todo';
 
-export const getStaticProps = async () => {
+interface Props {
+  todos: ITodo[];
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (): Promise<
+  GetStaticPropsResult<Props>
+> => {
   const { data: todos } = await axios(
     'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
   );
 
   return {
-    props: { todos }, // It will be passed as props in the component
+    props: { todos }, // todos object will be pass as props in the component.
   };
 };
 
