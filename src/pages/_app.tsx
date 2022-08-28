@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Template Next TypeScript</title>
 
-        {/* Viewport */}
+        {/* <!-- Viewport --> */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
         {/* <!--  Primary --> */}
@@ -34,6 +34,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         {/* <!--  For Analytics --> */}
         <meta property="fb:app_id" content="your_app_id" />
         <meta name="twitter:site" content="@username" />
+
+        {/* <!--  Favicon --> */}
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
