@@ -11,6 +11,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Template Next TypeScript</title>
 
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
         {/* <!--  Primary --> */}
         <meta name="title" content="constROD's Website" />
         <meta name="description" content="constROD's Personal Website" />
