@@ -1,15 +1,15 @@
 import About from 'components/About/About';
-import AuthenticatedRoute from 'components/AuthenticatedRoute';
-import Layout from 'components/Layout';
 import { NextPage } from 'next';
 import React from 'react';
+import AuthenticatedRoute from 'shared/components/AuthenticatedRoute';
+import PageLayout from 'shared/components/Layouts/PageLayout';
 
 const AboutPage: NextPage = () => {
   return (
     <AuthenticatedRoute>
-      <Layout>
+      <PageLayout>
         <About />
-      </Layout>
+      </PageLayout>
     </AuthenticatedRoute>
   );
 };
