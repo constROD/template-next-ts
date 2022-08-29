@@ -5,13 +5,13 @@ import { useAsyncFn, useEffectOnce } from 'react-use';
 import { ITodo } from 'shared/interfaces/Todo';
 
 const CSRPage: NextPage = () => {
-  const [{ value: todos }, retrieveData] = useAsyncFn(async () => {
+  const [{ value: todos }, retrieveAsync] = useAsyncFn(async () => {
     const { data } = await axios('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10');
     return data as ITodo[];
   });
 
   useEffectOnce(() => {
-    retrieveData();
+    retrieveAsync();
   });
 
   return (
