@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import RootLayout from 'shared/components/Layouts/RootLayout';
 import { theme, GlobalStyle, ThemeProvider } from 'shared/theme';
 import '../../styles/globals.css';
 
@@ -41,7 +42,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <RootLayout>
+          <Component {...pageProps} />
+        </RootLayout>
       </ThemeProvider>
     </React.Fragment>
   );
