@@ -12,7 +12,7 @@ $ chmod ug+x .husky/*
 $ chmod ug+x .git/hooks/*
 ```
 
-- **(Optional):** Do this if you are using `nvm`.
+- **(Optional):** Do this if you are using **nvm**.
 
 ```bash
 $ yarn setup
@@ -47,7 +47,7 @@ $ yarn dev -p <PORT>
 $ yarn build
 ```
 
-- Run.
+- Run in **production** mode.
 
 ```bash
 $ yarn start
@@ -61,7 +61,7 @@ $ yarn start
 $ docker build -t {image_name} .
 ```
 
-- Run.
+- Run in **development/production** mode.
 
 ```bash
 $ docker run -d -p {machine_port}:80 --name {container_name} {image_name}
