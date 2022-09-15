@@ -1,4 +1,5 @@
 require('dotenv').config();
+/** @type {import('next').NextConfig} */
 
 module.exports = {
   env: {
@@ -9,6 +10,10 @@ module.exports = {
   swcMinify: true,
   compiler: {
     styledComponents: true,
+  },
+  images: {
+    minimumCacheTTL: 3600,
+    domains: ['domain.com'],
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test('.svg'));
