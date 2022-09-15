@@ -27,6 +27,12 @@ $ yarn or yarn install
 - Create `.env` file for environment variables. `.env-sample` are the required environment variables.
 - Run in **development** mode.
 
+- Add this to `.env`
+
+```bash
+NEXT_SHARP_PATH=/tmp/node_modules/sharp
+```
+
 ```bash
 $ yarn dev
 ```
