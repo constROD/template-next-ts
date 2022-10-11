@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   /* All the paths you pass in the payload will be force revalidated. */
   for (const path of paths) {
-    await res.unstable_revalidate(path);
+    await res.revalidate(path);
   }
 
   res.status(200).json({ revalidate: true });
