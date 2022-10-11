@@ -12,7 +12,7 @@ module.exports = {
     styledComponents: true,
   },
   images: {
-    minimumCacheTTL: 3600,
+    minimumCacheTTL: 84600,
     domains: ['domain.com'],
   },
   webpack(config) {
