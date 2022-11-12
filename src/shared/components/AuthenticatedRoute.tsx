@@ -6,13 +6,13 @@ import { useUserStore } from 'shared/store';
 
 const AuthenticatedRoute: React.FC<{ children: any }> = ({ children }) => {
   const { push: navigate } = useRouter();
-  const { isSignedIn } = useUserStore(state => state.computed);
+  const { computed } = useUserStore(state => state);
 
   useEffectOnce(() => {
-    if (!isSignedIn) navigate(ROUTES.LOGIN);
+    if (!computed.isSignedIn) navigate(ROUTES.LOGIN);
   });
 
-  if (!isSignedIn) return null;
+  if (!computed.isSignedIn) return null;
 
   return <React.Fragment>{children}</React.Fragment>;
 };
