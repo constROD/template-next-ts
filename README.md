@@ -15,13 +15,13 @@ $ chmod ug+x .git/hooks/*
 - **(Optional):** Do this if you are using **nvm**.
 
 ```bash
-$ yarn setup
+$ nvm use or nvm use 16.13.0
 ```
 
 - Install Dependencies.
 
 ```bash
-$ yarn or yarn install
+$ pnpm install
 ```
 
 - Create `.env` file for environment variables. `.env-sample` are the required environment variables.
@@ -34,13 +34,13 @@ NEXT_SHARP_PATH=/tmp/node_modules/sharp
 ```
 
 ```bash
-$ yarn dev
+$ pnpm dev
 ```
 
 - Run in **development** mode in custom **PORT**.
 
 ```bash
-$ yarn dev -p <PORT>
+$ pnpm dev -p <PORT>
 ```
 
 ## Run in production mode.
@@ -50,13 +50,13 @@ $ yarn dev -p <PORT>
 - Build the application.
 
 ```bash
-$ yarn build
+$ pnpm build
 ```
 
 - Run in **production** mode.
 
 ```bash
-$ yarn start
+$ pnpm start
 ```
 
 - **with Docker:** Download `Docker` in your machine or server.
