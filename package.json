@@ -18,7 +18,7 @@
     "setup": "cat .nvmrc | xargs nvm use",
     "dev": "next dev",
     "clean": "rm -rf ./.next && rm -rf ./out",
-    "build": "pnpm clean && next build",
+    "build": "npm run clean && next build",
     "preview": "next start",
     "encode:env": "cat .env | base64 -w 0 > .env-encoded",
     "docker:local": "docker compose",

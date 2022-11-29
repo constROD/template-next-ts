@@ -3,7 +3,7 @@ FROM node:16-buster-slim
 # Go to /home/dev/app directory.
 WORKDIR /home/dev/app
 
-RUN chown -R node /home/dev && chmod -R 775 /home/dev/app
+RUN chown -R node /home/dev
 USER node
 
 # Environment for npm and pnpm.
