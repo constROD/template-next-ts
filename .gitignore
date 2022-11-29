@@ -23,6 +23,7 @@ dist
 .DS_Store
 .env
 .env.*
+.env-encoded
 .npmrc
 *-lock.json
 .idea
@@ -33,6 +34,7 @@ dist
 *.sw?
 .vercel
 *.tsbuildinfo
+.pnpm-store
 
 # Logs
 logs

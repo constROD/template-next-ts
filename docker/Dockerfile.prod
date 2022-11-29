@@ -1,8 +1,4 @@
-FROM node:16-alpine3.14
-
-# Environment Variables
-ARG APP_ENV
-ENV APP_ENV=${APP_ENV}
+FROM node:16-buster-slim
 
 # Install pnpm globally
 RUN npm install -g pnpm@7.17.0
@@ -23,11 +19,8 @@ COPY styles styles
 COPY src src
 
 # Install dependencies and build the application.
-RUN echo ${APP_ENV} | base64 -d >.env
-RUN pnpm install && pnpm build
-
-# Set PORT
-EXPOSE 3000
+RUN pnpm i
+RUN pnpm build
 
 # Start the application.
 CMD ["pnpm", "start", "-p", "80"]
