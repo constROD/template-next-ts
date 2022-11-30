@@ -10,8 +10,11 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./:/home/dev/app
-      - /home/dev/app/node_modules
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
     environment:
+      MACHINE: docker
+      NEXT_SHARP_PATH: ${NEXT_SHARP_PATH}
       PORT: ${PORT}
       STAGE: ${STAGE}
