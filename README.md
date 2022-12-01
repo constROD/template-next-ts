@@ -72,12 +72,6 @@ $ docker compose up or pnpm docker:local up # Run in foreground
 $ docker compose up -d or pnpm docker:local up -d # Run in background
 ```
 
-- Check the container's logs.
-
-```bash
-$ docker logs <container_name>
-```
-
 - Shutdown container.
 
 ```bash
@@ -124,4 +118,8 @@ $ docker compose -f docker-compose.prod.yaml down -v or pnpm docker:prod down -v
 
 ```bash
 $ docker exec -it <container_name> bash
+```
+
+```bash
+$ docker logs <container_name>
 ```
