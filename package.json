@@ -15,7 +15,6 @@
   "author": "Rodrick Alcantara <rialcantara21@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "setup": "cat .nvmrc | xargs nvm use",
     "dev": "next dev",
     "clean": "rm -rf ./.next && rm -rf ./out",
     "build": "pnpm clean && next build",
