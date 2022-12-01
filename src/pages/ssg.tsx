@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GetStaticPropsResult, GetStaticProps, NextPage } from 'next';
+import { GetStaticProps, GetStaticPropsResult, NextPage } from 'next';
 import React from 'react';
 import { ITodo } from 'shared/interfaces/Todo';
 

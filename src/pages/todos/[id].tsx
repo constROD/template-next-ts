@@ -7,7 +7,6 @@ import {
   GetStaticPropsResult,
   NextPage,
 } from 'next';
-import React from 'react';
 import { ITodo } from 'shared/interfaces/Todo';
 import { styled } from 'shared/theme';
 

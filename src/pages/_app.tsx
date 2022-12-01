@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import RootLayout from 'shared/components/Layouts/RootLayout';
-import { theme, GlobalStyle, ThemeProvider } from 'shared/theme';
+import { GlobalStyle, theme, ThemeProvider } from 'shared/theme';
 import '../../styles/globals.css';
 
 import type { AppProps } from 'next/app';

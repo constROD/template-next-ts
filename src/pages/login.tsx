@@ -1,7 +1,6 @@
 import Login from 'components/Login/Login';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
 import { useUserStore } from 'shared/store';
