@@ -1,4 +1,4 @@
-import About from 'components/About/About';
+import About from 'modules/About';
 import { NextPage } from 'next';
 import PageLayout from 'shared/components/Layouts/PageLayout';
 

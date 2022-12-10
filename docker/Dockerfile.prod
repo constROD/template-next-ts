@@ -15,6 +15,7 @@ COPY postcss.config.js /app
 COPY tailwind.config.js /app
 COPY next.config.js /app
 COPY tsconfig.json /app
+COPY tsconfig.paths.json /app
 COPY package.json /app
 COPY pnpm-lock.yaml /app
 COPY public /app

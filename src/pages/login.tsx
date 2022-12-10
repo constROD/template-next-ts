@@ -1,4 +1,4 @@
-import Login from 'components/Login/Login';
+import Login from 'modules/Login';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffectOnce } from 'react-use';

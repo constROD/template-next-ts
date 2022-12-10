@@ -10,10 +10,6 @@ out
 
 # Testings
 coverage
-cypress/videos
-cypress/screenshots/
-cypress/snapshots/actual/
-cypress/snapshots/diff/
 
 # Builds
 build

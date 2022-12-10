@@ -1,15 +1,15 @@
-import { LoginWrapper } from './Login.styled';
+import { LoginWrapper } from './index.styled';
+import { loginValidator } from './validators';
 
 import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
 import { useAsyncFn } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
 import { useForm } from 'shared/hooks/useForm';
-import { ILoginForm } from 'shared/interfaces/Auth';
-import { IFormElements } from 'shared/interfaces/Form';
 import { useUserStore } from 'shared/store';
+import { ILoginForm } from 'shared/types/Auth';
+import { IFormElements } from 'shared/types/Form';
 import CommonUtil from 'shared/utils/Common';
-import { loginValidator } from 'shared/validators/Login';
 
 const Login: React.FC = () => {
   const { push: navigate } = useRouter();

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GetStaticProps, GetStaticPropsResult, NextPage } from 'next';
 import React from 'react';
-import { ITodo } from 'shared/interfaces/Todo';
+import { ITodo } from 'shared/types/Todo';
 
 interface Props {
   todos: ITodo[];

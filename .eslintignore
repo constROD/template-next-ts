@@ -3,7 +3,6 @@ node_modules
 
 # Configs
 Dockerfile
-jest.*.ts
 *.config.js
 *.config.ts
 
@@ -15,7 +14,6 @@ out
 
 # Testings
 coverage
-cypress
 
 # Builds
 build

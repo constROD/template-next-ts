@@ -1,4 +1,4 @@
-import { AboutWrapper } from './About.styled';
+import { AboutWrapper } from './index.styled';
 
 import { useRouter } from 'next/router';
 import React from 'react';

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { NextPage } from 'next';
 import React from 'react';
 import { useAsyncFn, useEffectOnce } from 'react-use';
-import { ITodo } from 'shared/interfaces/Todo';
+import { ITodo } from 'shared/types/Todo';
 
 const CSRPage: NextPage = () => {
   const [{ value: todos }, retrieveAsync] = useAsyncFn(async () => {

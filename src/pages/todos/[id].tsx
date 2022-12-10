@@ -7,8 +7,8 @@ import {
   GetStaticPropsResult,
   NextPage,
 } from 'next';
-import { ITodo } from 'shared/interfaces/Todo';
 import { styled } from 'shared/theme';
+import { ITodo } from 'shared/types/Todo';
 
 interface Props {
   todo: ITodo;
