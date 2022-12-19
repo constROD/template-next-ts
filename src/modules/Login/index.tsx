@@ -1,5 +1,5 @@
 import { LoginWrapper } from './index.styled';
-import { ILoginForm } from './types';
+import { LoginForm } from './types';
 import { loginValidator } from './validators';
 
 import { useRouter } from 'next/router';
@@ -8,31 +8,31 @@ import { useAsyncFn } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
 import { useForm } from 'shared/hooks/useForm';
 import { useUserStore } from 'shared/store';
-import { IFormElements } from 'shared/types/Form';
+import { FormElements } from 'shared/types/Form';
 import CommonUtil from 'shared/utils/Common';
 
 const Login: React.FC = () => {
   const { push: navigate } = useRouter();
   const login = useUserStore(state => state.login);
 
-  const defaultValues: ILoginForm = {
+  const defaultValues: LoginForm = {
     email: '',
     password: '',
   };
 
-  const { values, handle } = useForm<ILoginForm>({
+  const { values, handle } = useForm<LoginForm>({
     defaultValues,
     validator: loginValidator,
   });
 
-  const { current: memoizedHandle } = useRef((...args: [React.ChangeEvent<IFormElements>]) => {
+  const { current: memoizedHandle } = useRef((...args: [React.ChangeEvent<FormElements>]) => {
     const [event] = args;
     event.persist();
     handle({ event });
   });
 
   // eslint-disable-next-line @typescript-eslint/require-await
-  const [, loginAsync] = useAsyncFn(async (...args: [ILoginForm]) => {
+  const [, loginAsync] = useAsyncFn(async (...args: [LoginForm]) => {
     const [] = args;
 
     const response = login();
