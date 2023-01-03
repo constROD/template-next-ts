@@ -8,10 +8,10 @@ import {
   NextPage,
 } from 'next';
 import { styled } from 'shared/theme';
-import { ITodo } from 'shared/types/Todo';
+import { Todo } from 'shared/types/Todo';
 
 interface Props {
-  todo: ITodo;
+  todo: Todo;
 }
 
 export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsResult> => {

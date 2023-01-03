@@ -2,12 +2,12 @@ import axios from 'axios';
 import { NextPage } from 'next';
 import React from 'react';
 import { useAsyncFn, useEffectOnce } from 'react-use';
-import { ITodo } from 'shared/types/Todo';
+import { Todo } from 'shared/types/Todo';
 
 const CSRPage: NextPage = () => {
   const [{ value: todos }, retrieveAsync] = useAsyncFn(async () => {
     const { data } = await axios('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10');
-    return data as ITodo[];
+    return data as Todo[];
   });
 
   useEffectOnce(() => {

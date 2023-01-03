@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { GetServerSideProps, GetServerSidePropsResult, NextPage } from 'next';
 import React from 'react';
-import { ITodo } from 'shared/types/Todo';
+import { Todo } from 'shared/types/Todo';
 
 interface Props {
-  todos: ITodo[];
+  todos: Todo[];
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (): Promise<

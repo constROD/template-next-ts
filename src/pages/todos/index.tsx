@@ -2,10 +2,10 @@ import axios from 'axios';
 import { GetStaticProps, GetStaticPropsResult, NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
-import { ITodo } from 'shared/types/Todo';
+import { Todo } from 'shared/types/Todo';
 
 interface Props {
-  todos: ITodo[];
+  todos: Todo[];
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (): Promise<
