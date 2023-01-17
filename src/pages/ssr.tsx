@@ -7,9 +7,15 @@ interface Props {
   todos: Todo[];
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async (): Promise<
-  GetServerSidePropsResult<Props>
-> => {
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+  res,
+}): Promise<GetServerSidePropsResult<Props>> => {
+  res.setHeader(
+    'Cache-Control',
+    `s-maxage=${60 * 60 * 24 * 365}, stale-while-revalidate=${60 * 60 * 24}`
+  );
+
   const { data: todos } = await axios(
     'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
   );

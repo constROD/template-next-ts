@@ -25,9 +25,25 @@ module.exports = {
     styledComponents: true,
   },
   images: {
-    minimumCacheTTL: 84600,
     domains: ['domain.com'],
   },
+
+  /* Headers */
+  async headers() {
+    return [
+      {
+        source: '/:all*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: `s-maxage=${60 * 60 * 24 * 365}, stale-while-revalidate=${60 * 60 * 24}`,
+          },
+        ],
+      },
+    ];
+  },
+
+  /* Webpack */
   webpack: config => {
     const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test('.svg'));
     fileLoaderRule.exclude = /\.svg$/;

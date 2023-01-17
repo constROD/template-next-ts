@@ -12,7 +12,8 @@
     "accum",
     "zustand",
     "immer",
-    "tailwindcss"
+    "tailwindcss",
+    "maxage"
   ],
   "ignorePaths": ["node_modules/", "build/", ".husky", "pnpm-lock.yaml", "package.json"]
 }
