@@ -25,7 +25,7 @@ module.exports = {
     styledComponents: true,
   },
   images: {
-    domains: ['domain.com'],
+    domains: ['mydomain.com'],
   },
 
   /* Headers */

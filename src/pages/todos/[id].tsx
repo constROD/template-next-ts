@@ -1,25 +1,17 @@
-import axios from 'axios';
+import { TodoService } from 'modules/Todos/services';
+import { Todo } from 'modules/Todos/types';
 import {
   GetStaticPaths,
-  GetStaticPathsResult,
   GetStaticProps,
   GetStaticPropsContext,
-  GetStaticPropsResult,
-  NextPage,
+  InferGetStaticPropsType,
 } from 'next';
 import { styled } from 'shared/theme';
-import { Todo } from 'shared/types/Todo';
 
-interface Props {
-  todo: Todo;
-}
+export const getStaticPaths: GetStaticPaths = async () => {
+  const todos = await TodoService.list({ start: 0, limit: 10 });
 
-export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsResult> => {
-  const { data: todos } = await axios(
-    'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
-  );
-
-  const paths = todos.map((todo: any) => ({
+  const paths = todos.map(todo => ({
     params: { id: todo.id.toString() },
   }));
 
@@ -34,11 +26,11 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsRe
   };
 };
 
-export const getStaticProps: GetStaticProps<Props> = async (
+export const getStaticProps: GetStaticProps<{ todo: Todo }> = async (
   context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<Props>> => {
-  const id = context.params?.id;
-  const { data: todo } = await axios(`https://jsonplaceholder.typicode.com/todos/${id}`);
+) => {
+  const id = context.params?.id as string;
+  const todo = await TodoService.get(id);
 
   return {
     props: { todo }, // todo object will be pass as props in the component.
@@ -48,7 +40,7 @@ export const getStaticProps: GetStaticProps<Props> = async (
 
 const TodoPageWrapper = styled.div``;
 
-const TodoPage: NextPage<Props> = ({ todo }) => {
+const TodoPage = ({ todo }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <TodoPageWrapper>
       <h1>Todo {todo.id}</h1>

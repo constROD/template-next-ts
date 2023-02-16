@@ -1,6 +1,6 @@
 const isBrowser: boolean = typeof window !== 'undefined';
 
-class LocalStorageUtil {
+export default class LocalStorageUtil {
   static set(key: string, value: unknown): void {
     if (!isBrowser) return;
     localStorage[key] = value;
@@ -22,5 +22,3 @@ class LocalStorageUtil {
     localStorage.clear();
   }
 }
-
-export default LocalStorageUtil;

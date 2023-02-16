@@ -1,25 +1,20 @@
-import axios from 'axios';
+import { useTodos } from 'modules/Todos/hooks';
 import { NextPage } from 'next';
 import React from 'react';
-import { useAsyncFn, useEffectOnce } from 'react-use';
-import { Todo } from 'shared/types/Todo';
 
 const CSRPage: NextPage = () => {
-  const [{ value: todos }, retrieveAsync] = useAsyncFn(async () => {
-    const { data } = await axios('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10');
-    return data as Todo[];
-  });
+  const params = { start: 0, limit: 10 };
 
-  useEffectOnce(() => {
-    retrieveAsync();
-  });
+  const { data: todos = [], isLoading } = useTodos(params);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <React.Fragment>
       <h1>CSR Page</h1>
 
       <ul>
-        {(todos || []).map(todo => (
+        {todos.map(todo => (
           <li
             key={todo.id}
             style={{ display: 'grid', gridTemplateColumns: '5vw 40vw auto', alignItems: 'center' }}

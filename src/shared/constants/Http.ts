@@ -11,103 +11,87 @@
   8 - Unauthorized
   9 - Conflict
   10 - Not Found
-  11 - Unprocessable Entity
+  11 - Forbidden
 */
 
-export enum Code {
-  ServerError = 0,
-  Success = 1,
-  Created = 2,
-  Updated = 3,
-  Archived = 4,
-  Deleted = 5,
-  Restored = 6,
-  BadRequest = 7,
-  Unauthorized = 8,
-  Conflict = 9,
-  NotFound = 10,
-  UnprocessableEntity = 11,
-}
-
-export enum HttpResponseType {
-  ServerError = 'serverError',
-  Success = 'success',
-  Created = 'created',
-  Updated = 'updated',
-  Archived = 'archived',
-  Deleted = 'deleted',
-  Restored = 'restored',
-  BadRequest = 'badRequest',
-  Unauthorized = 'unauthorized',
-  Conflict = 'conflict',
-  NotFound = 'notFound',
-  UnprocessableEntity = 'unprocessableEntity',
-}
-
-export enum XHeader {
-  IdToken = 'X-ID-TOKEN',
-  AccessToken = 'X-ACCESS-TOKEN',
-}
+export const CODES = {
+  ServerError: 0,
+  Success: 1,
+  Created: 2,
+  Updated: 3,
+  Archived: 4,
+  Deleted: 5,
+  Restored: 6,
+  BadRequest: 7,
+  Unauthorized: 8,
+  Conflict: 9,
+  NotFound: 10,
+  Forbidden: 11,
+};
 
 export const HTTP_RESPONSES = {
-  serverError: {
+  ServerError: {
     message: 'Server Error',
     statusCode: 500,
     code: 0,
   },
-  success: {
+  Success: {
     message: 'Success',
     statusCode: 200,
     code: 1,
   },
-  created: {
+  Created: {
     message: 'Created',
     statusCode: 201,
     code: 2,
   },
-  updated: {
+  Updated: {
     message: 'Updated',
     statusCode: 200,
     code: 3,
   },
-  archived: {
+  Archived: {
     message: 'Archived',
     statusCode: 200,
     code: 4,
   },
-  deleted: {
+  Deleted: {
     message: 'Deleted',
     statusCode: 200,
     code: 5,
   },
-  restored: {
+  Restored: {
     message: 'Restored',
     statusCode: 200,
     code: 6,
   },
-  badRequest: {
+  BadRequest: {
     message: 'Bad Request',
     statusCode: 400,
     code: 7,
   },
-  unauthorized: {
+  Unauthorized: {
     message: 'Unauthorized',
     statusCode: 401,
     code: 8,
   },
-  conflict: {
+  Conflict: {
     message: 'Conflict',
     statusCode: 409,
     code: 9,
   },
-  notFound: {
+  NotFound: {
     message: 'Not Found',
     statusCode: 404,
     code: 10,
   },
-  unprocessableEntity: {
-    message: 'Unprocessable Entity',
-    statusCode: 422,
+  Forbidden: {
+    message: 'Forbidden',
+    statusCode: 403,
     code: 11,
   },
+};
+
+export const X_HEADER = {
+  AccessToken: 'x-access-token',
 };

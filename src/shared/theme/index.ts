@@ -28,7 +28,7 @@ export const screens = themeScreens;
 
 export const theme = (): Theme => ({ colors: themeColors, screens: themeScreens });
 export const ThemeProvider = SThemeProvider;
-export const styled: ThemedStyledInterface<Theme> = defaultStyled;
+export const styled = defaultStyled as ThemedStyledInterface<Theme>;
 export const GlobalStyle = createGlobalStyle`
   html, body {
     padding: 0;
@@ -38,8 +38,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #__next {
-    display: grid;
+    position: relative;
     height: 100%;
+    width: 100%;
   }
   
   *, *::before, *::after {

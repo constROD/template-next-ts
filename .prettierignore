@@ -1,27 +1,15 @@
-# Dependencies
 node_modules
 
-# Configs
-
-# Caches
 .eslintcache
 .vscode
 
-# Testings
-coverage
-
-# Builds
 build
 dist
 
-# Miscellaneous
 .DS_Store
 .env
 .env.*
 .npmrc
-*-lock.json
-*-lock.yaml
-*.lock
 .idea
 *.suo
 *.ntvs*
@@ -29,12 +17,13 @@ dist
 *.sln
 *.sw?
 
-# Logs
+sample.*.txt
+
+*-lock.json
+*-lock.yaml
+*.lock
+
 logs
 *.log
 *-debug.log*
 *-error.log*
-
-# Types
-
-# Ignores

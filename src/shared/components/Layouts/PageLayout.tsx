@@ -1,19 +1,17 @@
-import { PageLayoutWrapper } from './PageLayout.styled';
-
 import AuthenticatedRoute from '../AuthenticatedRoute';
 import Footer from '../Partials/Footer';
 import Navbar from '../Partials/Navbar';
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const PageLayout: React.FC<{ children: any }> = ({ children }) => {
+const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <AuthenticatedRoute>
-      <PageLayoutWrapper>
+      <div>
         <Navbar />
         <div className="content-main">{children}</div>
         <Footer />
-      </PageLayoutWrapper>
+      </div>
     </AuthenticatedRoute>
   );
 };

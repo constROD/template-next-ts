@@ -1,32 +1,21 @@
-# Dependencies
 node_modules
 
-# Configs
 Dockerfile
 *.config.js
 *.config.ts
 
-# Caches
 .eslintcache
 .vscode
 .next
 out
 
-# Testings
-coverage
-
-# Builds
 build
 dist
 
-# Miscellaneous
 .DS_Store
 .env
 .env.*
 .npmrc
-*-lock.json
-*-lock.yaml
-*.lock
 .idea
 *.suo
 *.ntvs*
@@ -36,17 +25,20 @@ dist
 .vercel
 *.tsbuildinfo
 
-# Logs
+sample.*.txt
+
+*-lock.json
+*-lock.yaml
+*.lock
+
 logs
 *.log
 *-debug.log*
 *-error.log*
 
-# Types
 global.d.ts
 next-env.d.ts
 
-# Ignores
 .dockerignore
 .prettierignore
 .eslintignore

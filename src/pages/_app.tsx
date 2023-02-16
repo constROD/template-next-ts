@@ -1,12 +1,25 @@
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import RootLayout from 'shared/components/Layouts/RootLayout';
 import { GlobalStyle, theme, ThemeProvider } from 'shared/theme';
 import '../../styles/globals.css';
 
-import type { AppProps } from 'next/app';
+export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) {
+  const [queryClient] = React.useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retryDelay: 1250,
+            staleTime: 1000 * 60 * 10,
+          },
+        },
+      })
+  );
 
-export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
       <Head>
@@ -40,12 +53,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <RootLayout>
-          <Component {...pageProps} />
-        </RootLayout>
-      </ThemeProvider>
+
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <RootLayout>
+              <Component {...pageProps} />
+            </RootLayout>
+          </ThemeProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </Hydrate>
+      </QueryClientProvider>
     </React.Fragment>
   );
 }

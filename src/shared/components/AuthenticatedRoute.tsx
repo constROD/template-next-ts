@@ -1,18 +1,18 @@
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useEffectOnce } from 'react-use';
+import React, { ReactNode, useEffect } from 'react';
 import { ROUTES } from 'shared/constants/Routes';
 import { useUserStore } from 'shared/store';
 
-const AuthenticatedRoute: React.FC<{ children: any }> = ({ children }) => {
+const AuthenticatedRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { push: navigate } = useRouter();
-  const { computed } = useUserStore(state => state);
+  const signedIn = useUserStore(state => state.signedIn());
 
-  useEffectOnce(() => {
-    if (!computed.isSignedIn) navigate(ROUTES.LOGIN);
-  });
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    if (!signedIn) navigate(ROUTES.LOGIN);
+  }, [signedIn, navigate]);
 
-  if (!computed.isSignedIn) return null;
+  if (!signedIn) return null;
 
   return <React.Fragment>{children}</React.Fragment>;
 };

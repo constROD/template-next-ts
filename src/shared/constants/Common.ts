@@ -1,5 +1,5 @@
-export enum Stages {
-  Dev = 'dev',
-  Staging = 'staging',
-  Prod = 'prod',
-}
+export const Stages = {
+  Dev: 'dev',
+  Staging: 'staging',
+  Prod: 'prod',
+};

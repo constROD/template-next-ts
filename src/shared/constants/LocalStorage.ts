@@ -1,7 +1,3 @@
-export enum AppLocalStorage {}
-
-export enum AuthLocalStorage {
-  IsAuth = 'auth_isAuth',
-  IdToken = 'auth_idToken',
-  AccessToken = 'auth_accessToken',
-}
+export const AUTH_LOCAL_STORAGE = {
+  AccessToken: 'auth_accessToken',
+};

@@ -1,32 +1,24 @@
-import axios from 'axios';
-import { GetStaticProps, GetStaticPropsResult, NextPage } from 'next';
+import { TodoService } from 'modules/Todos/services';
+import { Todo } from 'modules/Todos/types';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import React from 'react';
-import { Todo } from 'shared/types/Todo';
 
-interface Props {
-  todos: Todo[];
-}
-
-export const getStaticProps: GetStaticProps<Props> = async (): Promise<
-  GetStaticPropsResult<Props>
-> => {
-  const { data: todos } = await axios(
-    'https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10'
-  );
+export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
+  const todos = await TodoService.list({ start: 0, limit: 10 });
 
   return {
     props: { todos }, // todos object will be pass as props in the component.
   };
 };
 
-const TodosPage: NextPage = ({ todos }: any) => {
+const TodosPage = ({ todos }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <React.Fragment>
       <h1>Todos Page</h1>
 
       <ul>
-        {(todos || []).map((todo: any) => (
+        {todos.map(todo => (
           <Link key={todo.id} href={`/todos/${todo.id}`}>
             <div
               style={{

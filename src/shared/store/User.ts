@@ -7,14 +7,8 @@ export const useUserStore = create(
     /* States */
     user: null,
 
-    /* Computed States */
-    computed: {
-      get isSignedIn() {
-        return !!get().user;
-      },
-    },
-
     /* Functions */
+    signedIn: () => !!get().user,
     login: () => {
       set((state: UserStore) => {
         state.user = 'constROD';

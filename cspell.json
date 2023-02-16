@@ -13,7 +13,12 @@
     "zustand",
     "immer",
     "tailwindcss",
-    "maxage"
+    "maxage",
+    "tanstack",
+    "opentype",
+    "truetype",
+    "pallete",
+    "mydomain"
   ],
   "ignorePaths": ["node_modules/", "build/", ".husky", "pnpm-lock.yaml", "package.json"]
 }

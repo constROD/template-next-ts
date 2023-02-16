@@ -7,6 +7,5 @@
     "source.organizeImports": true
   },
   "eslint.format.enable": true,
-  "eslint.alwaysShowStatus": true,
   "eslint.lintTask.enable": true,
 }
