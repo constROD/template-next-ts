@@ -1,4 +1,4 @@
-import { IMAGE_URL } from 'shared/constants/Asset';
+import { IMAGE_URL } from 'shared/constants/Common';
 
 export const IMAGES = {
   banner: {

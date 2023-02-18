@@ -3,3 +3,5 @@ export const Stages = {
   Staging: 'staging',
   Prod: 'prod',
 };
+
+export const IMAGE_URL = 'https://mydomain.com';

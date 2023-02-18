@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps<{ todo: Todo }> = async (
   const todo = await TodoService.get(id);
 
   return {
-    props: { todo }, // todo object will be pass as props in the component.
+    props: { todo }, // <todo> object will be passed as props in the component.
     revalidate: 1, // It will update the page every 1 second
   };
 };
