@@ -92,6 +92,6 @@ export const HTTP_RESPONSES = {
   },
 };
 
-export const X_HEADER = {
+export const X_HEADERS = {
   AccessToken: 'x-access-token',
 };

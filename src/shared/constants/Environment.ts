@@ -4,4 +4,11 @@
  * * You must also add it to the next.config.js file.
  */
 
-export const STAGE = process.env.STAGE || '';
+export const STAGES = {
+  Dev: 'dev',
+  Staging: 'staging',
+  Prod: 'prod',
+} as const;
+export const STAGE_VALUES = [...Object.values(STAGES)] as const;
+
+export const STAGE = (process.env.STAGE as typeof STAGE_VALUES[number]) || STAGES.Dev;

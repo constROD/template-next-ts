@@ -1,3 +1,3 @@
-export const AUTH_LOCAL_STORAGE = {
+export const AUTH_LS = {
   AccessToken: 'auth_accessToken',
 };

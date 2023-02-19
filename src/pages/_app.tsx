@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import RootLayout from 'shared/components/Layouts/RootLayout';
+import { STAGE, STAGES } from 'shared/constants/Environment';
 import { GlobalStyle, theme, ThemeProvider } from 'shared/theme';
 import '../../styles/globals.css';
 
@@ -62,7 +63,7 @@ export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedSta
               <Component {...pageProps} />
             </RootLayout>
           </ThemeProvider>
-          <ReactQueryDevtools initialIsOpen={false} />
+          {STAGE === STAGES.Dev && <ReactQueryDevtools initialIsOpen={false} />}
         </Hydrate>
       </QueryClientProvider>
     </React.Fragment>
