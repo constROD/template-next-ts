@@ -7,8 +7,12 @@ export interface UserStore {
   /* States */
   user: string | null;
 
+  /* Computed States */
+  computed: {
+    isSignedIn: boolean;
+  };
+
   /* Functions */
-  signedIn: () => boolean;
   login: () => StoreResponse;
   logout: () => StoreResponse;
 }

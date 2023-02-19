@@ -7,14 +7,14 @@ import { useUserStore } from 'shared/store';
 
 const LoginPage: NextPage = () => {
   const { push: navigate } = useRouter();
-  const signedIn = useUserStore(state => state.signedIn());
+  const isSignedIn = useUserStore(state => state.computed.isSignedIn);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    if (signedIn) navigate(ROUTES.HOME);
-  }, [signedIn, navigate]);
+    if (isSignedIn) navigate(ROUTES.HOME);
+  }, [isSignedIn, navigate]);
 
-  if (signedIn) return null;
+  if (isSignedIn) return null;
 
   return <Login />;
 };

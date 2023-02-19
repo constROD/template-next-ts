@@ -23,9 +23,8 @@ const Login = () => {
       console.log({ error: isValid.error });
     } else {
       console.log({ data: isValid.data });
+      login();
     }
-
-    login();
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
