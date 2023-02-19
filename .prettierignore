@@ -17,12 +17,6 @@ dist
 *.sln
 *.sw?
 
-sample.*.txt
-
-*-lock.json
-*-lock.yaml
-*.lock
-
 logs
 *.log
 *-debug.log*
