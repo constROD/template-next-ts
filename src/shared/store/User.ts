@@ -3,17 +3,17 @@ import create from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
 /**
- * Note: When using Computed States you must follow the following rules.
+ * ? Note: When using Computed States you must follow the following rules.
  *
- * Wrong:
- * const { isSignedIn } = useUserStore(state => state.computed);
+ * ! Wrong:
+ * ! const { isSignedIn } = useUserStore(state => state.computed);
  *
- * If you use the following, it will not detect the change.
+ * ! If you use the following, it will not detect the change.
  *
- * Correct:
- * const isSignedIn = useUserStore(state => state.computed.isSignedIn);
+ * * Correct:
+ * * const isSignedIn = useUserStore(state => state.computed.isSignedIn);
  *
- * If you use the following, it will detect the change.
+ * * If you use the following, it will detect the change.
  */
 
 export const useUserStore = create(
