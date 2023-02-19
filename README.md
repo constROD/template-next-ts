@@ -47,6 +47,7 @@ pnpm dev
 - Build the application.
 
 ```bash
+pnpm build
 pnpm start
 ```
 
