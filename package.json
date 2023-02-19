@@ -19,6 +19,7 @@
     "clean": "rm -rf ./.next && rm -rf ./out",
     "build": "pnpm clean && next build",
     "preview": "next start",
+    "start": "next start",
     "encode:env": "cat .env | base64 -w 0 > .env-encoded",
     "format": "prettier --write ./src/**/*.ts{,x}",
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
