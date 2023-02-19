@@ -1,30 +1,20 @@
-# Dependencies
 node_modules
 
-# Configs
 commitlint.config.js
 Dockerfile
 
-# Caches
 .eslintcache
 .vscode
 .next
 out
 
-# Testings
-coverage
-
-# Builds
 build
 dist
 
-# Miscellaneous
 .DS_Store
 .env
 .env.*
 .npmrc
-*-lock.json
-*.lock
 .idea
 *.suo
 *.ntvs*
@@ -34,15 +24,15 @@ dist
 .vercel
 *.tsbuildinfo
 
-# Logs
+*-lock.json
+*-lock.yaml
+*.lock
+
 logs
 *.log
 *-debug.log*
 *-error.log*
 
-# Types
-
-# Ignores
 .dockerignore
 .prettierignore
 .eslintignore
