@@ -1,4 +1,4 @@
-# Template Next TypeScript
+# Template Next 12 TypeScript
 
 ## Prerequisites
 
@@ -9,18 +9,20 @@
 - **(Required for MacOSX):** Run this to give permission husky to run pre-commit hook.
 
 ```bash
-$ chmod ug+x .husky/*
-$ chmod ug+x .git/hooks/*
+chmod ug+x .husky/*
+chmod ug+x .git/hooks/*
 ```
 
 - **(Optional):** Do this if you are using **nvm**.
 
 ```bash
-$ nvm use or nvm use 16.13.0
+nvm use or nvm use 16.13.0
 ```
 
-- Create `.env` file and refer to `.env-sample` file for the required secrets.
-- Append this to `.env`
+- Create `.env` file.
+- and refer to the `sample.<secret-file>.txt` for the required variables.
+
+- Lastly add this to `.env` file. To change the image loader to sharp.
 
 ```bash
 NEXT_SHARP_PATH=/tmp/node_modules/sharp
@@ -31,13 +33,13 @@ NEXT_SHARP_PATH=/tmp/node_modules/sharp
 - Install dependencies.
 
 ```bash
-$ pnpm i
+pnpm i
 ```
 
 **Development Mode:**
 
 ```bash
-$ pnpm dev
+pnpm dev
 ```
 
 **Production Mode:**
@@ -45,7 +47,7 @@ $ pnpm dev
 - Build the application.
 
 ```bash
-$ pnpm start
+pnpm start
 ```
 
 ## With Docker
@@ -55,31 +57,22 @@ $ pnpm start
 - Build container.
 
 ```bash
-$ docker compose build or pnpm docker:local build # Build with cache
-```
-
-```bash
-$ docker compose build --no-cache or pnpm docker:local build --no-cache # Build with no cache
+docker compose build # Build with cache
+docker compose build --no-cache # Build with no cache
 ```
 
 - Run container.
 
 ```bash
-$ docker compose up or pnpm docker:local up # Run in foreground
-```
-
-```bash
-$ docker compose up -d or pnpm docker:local up -d # Run in background
+docker compose up # Run in foreground
+docker compose up -d # Run in background
 ```
 
 - Shutdown container.
 
 ```bash
-$ docker compose down or pnpm docker:local down # Remove without volumes
-```
-
-```bash
-$ docker compose down -v or pnpm docker:local down -v # Remove with volumes
+docker compose down # Remove without volumes
+docker compose down -v # Remove with volumes
 ```
 
 **Production Mode:**
@@ -87,39 +80,30 @@ $ docker compose down -v or pnpm docker:local down -v # Remove with volumes
 - Build container.
 
 ```bash
-$ docker compose -f docker-compose.prod.yaml build or pnpm docker:prod build # Build with cache
-```
-
-```bash
-$ docker compose -f docker-compose.prod.yaml build or pnpm docker:prod build # Build with no cache
+docker compose -f docker-compose.prod.yaml build # Build with cache
+docker compose -f docker-compose.prod.yaml build --no-cache # Build with no cache
 ```
 
 - Run container.
 
 ```bash
-$ docker compose -f docker-compose.prod.yaml up or pnpm docker:prod up # Run in foreground
-```
-
-```bash
-$ docker compose -f docker-compose.prod.yaml up -d or pnpm docker:prod up -d # Run in background
+docker compose -f docker-compose.prod.yaml up # Run in foreground
+docker compose -f docker-compose.prod.yaml up -d # Run in background
 ```
 
 - Shutdown container.
 
 ```bash
-$ docker compose -f docker-compose.prod.yaml down or pnpm docker:prod down # Remove without volumes
+docker compose -f docker-compose.prod.yaml down # Remove without volumes
+docker compose -f docker-compose.prod.yaml down -v # Remove with volumes
+```
+
+- Access the container.
+
+```bash
+docker exec -it <container_name> bash
 ```
 
 ```bash
-$ docker compose -f docker-compose.prod.yaml down -v or pnpm docker:prod down -v # Remove with volumes
-```
-
-**Access the container:**
-
-```bash
-$ docker exec -it <container_name> bash
-```
-
-```bash
-$ docker logs <container_name>
+docker logs <container_name>
 ```

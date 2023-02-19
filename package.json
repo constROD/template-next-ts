@@ -21,12 +21,9 @@
     "preview": "next start",
     "start": "next start",
     "encode:env": "cat .env | base64 -w 0 > .env-encoded",
-    "docker:local": "docker compose",
-    "docker:prod": "docker compose -f docker-compose.prod.yaml",
     "format": "prettier --write ./src/**/*.ts{,x}",
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx",
-    "git:dev": "git checkout develop && git pull origin develop && git branch | grep -v \"main\\|staging\\|develop\" | xargs git branch -D",
     "pre-commit": "lint-staged --allow-empty",
     "prepare": "husky install"
   },
