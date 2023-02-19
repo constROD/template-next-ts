@@ -28,7 +28,7 @@ export const screens = themeScreens;
 
 export const theme = (): Theme => ({ colors: themeColors, screens: themeScreens });
 export const ThemeProvider = SThemeProvider;
-export const styled = defaultStyled as ThemedStyledInterface<Theme>;
+export const styled: ThemedStyledInterface<Theme> = defaultStyled;
 export const GlobalStyle = createGlobalStyle`
   html, body {
     padding: 0;
