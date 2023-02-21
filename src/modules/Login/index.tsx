@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import { ChangeEvent, useState } from 'react';
+import { type ChangeEvent, useState } from 'react';
 import { useUserStore } from 'shared/store';
-import { z } from 'zod';
+import { type z } from 'zod';
 import { loginSchema } from './validators';
 
 const Login = () => {

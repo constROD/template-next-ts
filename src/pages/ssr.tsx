@@ -1,6 +1,6 @@
 import { TodoService } from 'modules/Todos/services';
-import { Todo } from 'modules/Todos/types';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { type Todo } from 'modules/Todos/types';
+import { type GetServerSideProps, type InferGetServerSidePropsType } from 'next';
 import React from 'react';
 
 export const getServerSideProps: GetServerSideProps<{ todos: Todo[] }> = async () => {

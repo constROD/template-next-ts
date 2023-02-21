@@ -1,5 +1,5 @@
 import Login from 'modules/Login';
-import { NextPage } from 'next';
+import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { ROUTES } from 'shared/constants/Routes';
@@ -10,8 +10,7 @@ const LoginPage: NextPage = () => {
   const isSignedIn = useUserStore(state => state.computed.isSignedIn);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    if (isSignedIn) navigate(ROUTES.HOME);
+    if (isSignedIn) void navigate(ROUTES.HOME);
   }, [isSignedIn, navigate]);
 
   if (isSignedIn) return null;

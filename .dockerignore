@@ -24,10 +24,6 @@ dist
 .vercel
 *.tsbuildinfo
 
-*-lock.json
-*-lock.yaml
-*.lock
-
 logs
 *.log
 *-debug.log*

@@ -9,6 +9,7 @@ dist
 .DS_Store
 .env
 .env.*
+.env-encoded
 .npmrc
 .idea
 *.suo
@@ -16,6 +17,12 @@ dist
 *.njsproj
 *.sln
 *.sw?
+.vercel
+*.tsbuildinfo
+
+*-lock.json
+*-lock.yaml
+*.lock
 
 logs
 *.log

@@ -1,11 +1,11 @@
-import { useTodos } from 'modules/Todos/hooks';
-import { NextPage } from 'next';
+import { useGetTodos } from 'modules/Todos/hooks';
+import { type NextPage } from 'next';
 import React from 'react';
 
 const CSRPage: NextPage = () => {
   const params = { start: 0, limit: 10 };
 
-  const { data: todos = [], isLoading } = useTodos(params);
+  const { data: todos = [], isLoading } = useGetTodos(params);
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -15,10 +15,7 @@ const CSRPage: NextPage = () => {
 
       <ul>
         {todos.map(todo => (
-          <li
-            key={todo.id}
-            style={{ display: 'grid', gridTemplateColumns: '5vw 40vw auto', alignItems: 'center' }}
-          >
+          <li key={todo.id} className="grid grid-cols-[5vw_40vw_auto] items-center">
             <span>{todo.id}</span>
             <span>{todo.title}</span>
             <span>{todo.completed ? 'Done' : 'Pending'}</span>

@@ -1,10 +1,10 @@
 import { TodoService } from 'modules/Todos/services';
-import { Todo } from 'modules/Todos/types';
+import { type Todo } from 'modules/Todos/types';
 import {
-  GetStaticPaths,
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
+  type GetStaticPaths,
+  type GetStaticProps,
+  type GetStaticPropsContext,
+  type InferGetStaticPropsType,
 } from 'next';
 import { styled } from 'shared/theme';
 

@@ -1,5 +1,6 @@
-require('dotenv').config();
 /** @type {import('next').NextConfig} */
+
+require('dotenv').config();
 
 const forDockerDevelopment = () => {
   if (process.env.MACHINE !== 'docker') return {};
@@ -25,7 +26,7 @@ module.exports = {
     styledComponents: true,
   },
   images: {
-    domains: ['mydomain.com'],
+    domains: ['unsplash.com'],
   },
 
   /* Headers */
@@ -37,6 +38,7 @@ module.exports = {
           {
             key: 'Cache-Control',
             value: `s-maxage=${60 * 60 * 24 * 365}, stale-while-revalidate=${60 * 60 * 24}`,
+            // 1 year (s-maxage) + 1 day (stale-while-revalidate)
           },
         ],
       },

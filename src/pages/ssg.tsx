@@ -1,6 +1,6 @@
 import { TodoService } from 'modules/Todos/services';
-import { Todo } from 'modules/Todos/types';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { type Todo } from 'modules/Todos/types';
+import { type GetStaticProps, type InferGetStaticPropsType } from 'next';
 import React from 'react';
 
 export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {

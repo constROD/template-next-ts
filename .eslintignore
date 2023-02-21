@@ -25,7 +25,7 @@ dist
 .vercel
 *.tsbuildinfo
 
-sample.*.txt
+!**.example
 
 *-lock.json
 *-lock.yaml

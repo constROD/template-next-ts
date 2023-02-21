@@ -6,14 +6,14 @@ import { TodoService } from './services';
  * queryKey format: /todos/{id} to ['todos', id]
  */
 
-export const useTodos = (params?: { start: number; limit: number }) => {
+export const useGetTodos = (params?: { start: number; limit: number }) => {
   return useQuery({
     queryKey: ['todos', params],
     queryFn: () => TodoService.list(params),
   });
 };
 
-export const useTodo = (id: number | string) => {
+export const useGetTodo = (id: number | string) => {
   return useQuery({
     queryKey: ['todos', id],
     queryFn: () => TodoService.get(id),

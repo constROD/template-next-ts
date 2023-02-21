@@ -1,5 +1,5 @@
 import ky from 'ky-universal';
-import { Todo } from './types';
+import { type Todo } from './types';
 
 class TodoClass {
   async list(params?: { start: number; limit: number }) {

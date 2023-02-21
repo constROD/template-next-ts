@@ -1,4 +1,4 @@
-# Template Next 12 TypeScript
+# Template Next TypeScript
 
 ## Prerequisites
 
@@ -20,13 +20,7 @@ nvm use or nvm use 16.13.0
 ```
 
 - Create `.env` file.
-- and refer to the `sample.<secret-file>.txt` for the required variables.
-
-- Lastly add this to `.env` file. To change the image loader to sharp.
-
-```bash
-NEXT_SHARP_PATH=/tmp/node_modules/sharp
-```
+- and refer to the `<secret-name>.example` for the required variables.
 
 ## Without Docker
 

@@ -1,6 +1,7 @@
 node_modules
 
 .eslintcache
+.pnpm-store
 .next
 out
 
@@ -20,10 +21,14 @@ dist
 *.sw?
 .vercel
 *.tsbuildinfo
-.pnpm-store
 
+!**.example
+
+# Remove the lock below if you're using npm
 *-lock.json
+# Remove the lock below if you're using pnpm
 *-lock.yaml
+# Remove the lock below if you're using yarn
 *.lock
 
 logs
