@@ -1,10 +1,9 @@
 import AuthenticatedRoute from '../AuthenticatedRoute';
-import Footer from '../Partials/Footer';
-import Navbar from '../Partials/Navbar';
 
 import React, { type ReactNode } from 'react';
+import { Footer, Navbar } from '../Partials';
 
-const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <AuthenticatedRoute>
       <div>
@@ -15,5 +14,3 @@ const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     </AuthenticatedRoute>
   );
 };
-
-export default PageLayout;

@@ -3,7 +3,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
-import RootLayout from 'shared/components/Layouts/RootLayout';
+import { RootLayout } from 'shared/components/Layouts';
 import { STAGE, STAGES } from 'shared/constants/Environment';
 import { GlobalStyle, theme, ThemeProvider } from 'shared/theme';
 import '../../styles/globals.css';

@@ -18,7 +18,9 @@
     "opentype",
     "truetype",
     "pallete",
-    "mydomain"
+    "mydomain",
+    "browserconfig",
+    "mstile"
   ],
   "ignorePaths": ["node_modules/", "build/", ".husky", "pnpm-lock.yaml", "package.json"]
 }
