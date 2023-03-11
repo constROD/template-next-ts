@@ -6,7 +6,6 @@ import {
   type GetStaticPropsContext,
   type InferGetStaticPropsType,
 } from 'next';
-import { styled } from 'shared/theme';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const todos = await TodoService.list({ start: 0, limit: 10 });
@@ -38,18 +37,16 @@ export const getStaticProps: GetStaticProps<{ todo: Todo }> = async (
   };
 };
 
-const TodoPageWrapper = styled.div``;
-
 const TodoPage = ({ todo }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <TodoPageWrapper>
+    <div>
       <h1>Todo {todo.id}</h1>
       <ul>
         <li>ID: {todo.id}</li>
         <li>TODO: {todo.title}</li>
         <li>STATUS: {todo.completed ? 'Done' : 'Pending'}</li>
       </ul>
-    </TodoPageWrapper>
+    </div>
   );
 };
 

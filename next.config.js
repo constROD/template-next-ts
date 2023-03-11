@@ -16,14 +16,10 @@ const forDockerDevelopment = () => {
 };
 
 module.exports = {
+  reactStrictMode: true,
   env: {
     PORT: process.env.PORT,
     STAGE: process.env.STAGE,
-  },
-  reactStrictMode: true,
-  swcMinify: true,
-  compiler: {
-    styledComponents: true,
   },
   images: {
     domains: ['unsplash.com'],

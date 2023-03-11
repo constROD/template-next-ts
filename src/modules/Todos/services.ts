@@ -1,19 +1,18 @@
-import ky from 'ky-universal';
+import axios from 'axios';
 import { type Todo } from './types';
 
 class TodoClass {
   async list(params?: { start: number; limit: number }) {
-    const response = await ky
-      .get('https://jsonplaceholder.typicode.com/todos', {
-        searchParams: params,
-      })
-      .json();
-    return response as Todo[];
+    const { data } = await axios.get<Todo[]>('https://jsonplaceholder.typicode.com/todos', {
+      params,
+    });
+
+    return data;
   }
 
   async get(id: number | string) {
-    const response = await ky.get(`https://jsonplaceholder.typicode.com/todos/${id}`).json();
-    return response as Todo;
+    const { data } = await axios.get<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+    return data;
   }
 }
 
