@@ -3,7 +3,7 @@ import React, { useEffect, type ReactNode } from 'react';
 import { ROUTES } from 'shared/constants/Routes';
 import { useUserStore } from 'shared/store';
 
-const AuthenticatedRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { push: navigate } = useRouter();
   const isSignedIn = useUserStore(state => state.computed.isSignedIn);
 
@@ -15,5 +15,3 @@ const AuthenticatedRoute: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   return <React.Fragment>{children}</React.Fragment>;
 };
-
-export default AuthenticatedRoute;

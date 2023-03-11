@@ -1,16 +1,14 @@
-import AuthenticatedRoute from '../AuthenticatedRoute';
-
+import { Footer, Navbar, PrivateRoute } from 'modules/Partials';
 import React, { type ReactNode } from 'react';
-import { Footer, Navbar } from '../Partials';
 
 export const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <AuthenticatedRoute>
+    <PrivateRoute>
       <div>
         <Navbar />
         <div className="content-main">{children}</div>
         <Footer />
       </div>
-    </AuthenticatedRoute>
+    </PrivateRoute>
   );
 };

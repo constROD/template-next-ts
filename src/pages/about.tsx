@@ -1,6 +1,6 @@
 import About from 'modules/About';
+import { PageLayout } from 'modules/Layouts';
 import { type NextPage } from 'next';
-import { PageLayout } from 'shared/components/Layouts';
 
 const AboutPage: NextPage = () => {
   return (
