@@ -17,7 +17,9 @@ const forDockerDevelopment = () => {
 
 module.exports = {
   reactStrictMode: true,
+  /* Environment Variables */
   env: {
+    // * Add .env environment variables here.
     PORT: process.env.PORT,
     STAGE: process.env.STAGE,
   },
@@ -29,12 +31,12 @@ module.exports = {
   async headers() {
     return [
       {
+        // * Cache all static assets for 1 year.
         source: '/:all*',
         headers: [
           {
             key: 'Cache-Control',
             value: `s-maxage=${60 * 60 * 24 * 365}, stale-while-revalidate=${60 * 60 * 24}`,
-            // 1 year (s-maxage) + 1 day (stale-while-revalidate)
           },
         ],
       },

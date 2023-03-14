@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
-import { type ChangeEvent, useState } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import { useUserStore } from 'shared/store';
 import { type z } from 'zod';
-import { loginSchema } from './validators';
+import { loginSchema } from './validations';
 
 const Login = () => {
   const { push: navigate } = useRouter();
@@ -17,14 +17,10 @@ const Login = () => {
   const login = useUserStore(state => state.login);
 
   const handleLogin = () => {
-    const isValid = loginSchema.safeParse(values);
-
-    if (!isValid.success) {
-      console.log({ error: isValid.error });
-    } else {
-      console.log({ data: isValid.data });
-      login();
-    }
+    const validated = loginSchema.safeParse(values);
+    // eslint-disable-next-line no-console
+    if (!validated.success) return console.debug({ error: validated.error });
+    login();
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
