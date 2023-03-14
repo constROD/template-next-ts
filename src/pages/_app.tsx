@@ -4,7 +4,7 @@ import { RootLayout } from 'modules/Layouts';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
-import { STAGE, STAGES } from 'shared/constants/Environment';
+import { STAGE, STAGES } from 'shared/constants/environments';
 import '../../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) {

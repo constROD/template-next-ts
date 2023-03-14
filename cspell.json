@@ -20,7 +20,8 @@
     "pallete",
     "mydomain",
     "browserconfig",
-    "mstile"
+    "mstile",
+    "routess"
   ],
   "ignorePaths": ["node_modules/", "build/", ".husky", "pnpm-lock.yaml", "package.json"]
 }

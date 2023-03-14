@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import { ROUTES } from 'shared/constants/Routes';
+import { ROUTES } from 'shared/constants/routess';
 import { useUserStore } from 'shared/store';
 
 const Home: React.FC = () => {

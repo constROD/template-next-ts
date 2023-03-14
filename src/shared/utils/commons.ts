@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/Common';
+import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/commons';
 
 export const formatDate = (date: Date | null, desiredFormat?: string) => {
   if (!date) return '';
