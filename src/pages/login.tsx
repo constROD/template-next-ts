@@ -2,7 +2,7 @@ import Login from 'modules/Login';
 import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { ROUTES } from 'shared/constants/routess';
+import { ROUTES } from 'shared/constants/routes';
 import { useUserStore } from 'shared/store';
 
 const LoginPage: NextPage = () => {

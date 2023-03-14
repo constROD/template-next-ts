@@ -1,6 +1,6 @@
 import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { ROUTES } from 'shared/constants/routess';
+import { ROUTES } from 'shared/constants/routes';
 
 const NotFoundPage: NextPage = () => {
   const { push: navigate } = useRouter();
