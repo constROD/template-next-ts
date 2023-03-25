@@ -8,7 +8,8 @@ import {
 } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const todos = await TodoService.list({ start: 0, limit: 10 });
+  const params = { limit: 10 };
+  const todos = await TodoService.list(params);
 
   const paths = todos.map(todo => ({
     params: { id: todo.id.toString() },

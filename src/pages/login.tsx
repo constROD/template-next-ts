@@ -10,7 +10,7 @@ const LoginPage: NextPage = () => {
   const isSignedIn = useUserStore(state => state.computed.isSignedIn);
 
   useEffect(() => {
-    if (isSignedIn) void navigate(ROUTES.HOME);
+    if (isSignedIn) void navigate(ROUTES.ABOUT);
   }, [isSignedIn, navigate]);
 
   if (isSignedIn) return null;

@@ -4,7 +4,8 @@ import { type GetServerSideProps, type InferGetServerSidePropsType } from 'next'
 import React from 'react';
 
 export const getServerSideProps: GetServerSideProps<{ todos: Todo[] }> = async () => {
-  const todos = await TodoService.list({ start: 0, limit: 10 });
+  const params = { limit: 10 };
+  const todos = await TodoService.list(params);
 
   return {
     props: {

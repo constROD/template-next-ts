@@ -4,7 +4,8 @@ import { type GetStaticProps, type InferGetStaticPropsType } from 'next';
 import React from 'react';
 
 export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
-  const todos = await TodoService.list({ start: 0, limit: 10 });
+  const params = { limit: 10 };
+  const todos = await TodoService.list(params);
 
   return {
     props: { todos }, // todos object will be pass as props in the component.
