@@ -1,6 +1,6 @@
 import { type NextPage } from 'next';
 import Link from 'next/link';
-import { ROUTES } from 'shared/constants/routes';
+import { ROUTES } from 'shared/constants/commons';
 
 const SamplePage: NextPage = () => {
   return (
