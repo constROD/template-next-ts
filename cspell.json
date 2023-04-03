@@ -22,7 +22,14 @@
     "browserconfig",
     "mstile",
     "bossrod",
-    "bossrodtv"
+    "bossrodtv",
+    "middlewares",
+    "todoss",
+    "layoutss",
+    "loginss",
+    "homess",
+    "aboutss",
+    "partialss"
   ],
   "ignorePaths": ["node_modules/", "build/", ".husky", "pnpm-lock.yaml", "package.json"]
 }

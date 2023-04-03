@@ -1,5 +1,5 @@
-import { TodoService } from 'modules/Todos/services';
-import { type Todo } from 'modules/Todos/types';
+import { TodoService } from 'modules/todoss/services';
+import { type Todo } from 'modules/todoss/types';
 import { type GetServerSideProps, type InferGetServerSidePropsType } from 'next';
 import React from 'react';
 

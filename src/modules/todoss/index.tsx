@@ -1,4 +1,4 @@
-import { type Todo } from 'modules/Todos/types';
+import { type Todo } from 'modules/todoss/types';
 import Link from 'next/link';
 import { ROUTES } from 'shared/constants/routes';
 
