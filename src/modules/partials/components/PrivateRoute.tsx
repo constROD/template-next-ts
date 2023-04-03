@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, type ReactNode } from 'react';
-import { ROUTES } from 'shared/constants/routes';
+import { ROUTES } from 'shared/constants/commons';
 import { useUserStore } from 'shared/store';
 
 export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) => {

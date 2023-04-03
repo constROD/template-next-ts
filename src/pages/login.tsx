@@ -1,8 +1,8 @@
-import Login from 'modules/loginss';
+import Login from 'modules/logins';
 import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { ROUTES } from 'shared/constants/routes';
+import { ROUTES } from 'shared/constants/commons';
 import { useUserStore } from 'shared/store';
 
 const LoginPage: NextPage = () => {
