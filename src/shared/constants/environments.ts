@@ -3,7 +3,7 @@
  * * - You must add it to the `.env` file.
  * * - You must add it to the `.env.example` file.
  * * - You must add it to the `src/shared/constants/environments.ts` file.
- * * - You must add it to the `next-config.js` file.
+ * * - You must add it to the `next.config.js` file.
  */
 
 export const STAGES = {
