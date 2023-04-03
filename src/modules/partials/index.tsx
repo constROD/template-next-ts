@@ -1,3 +1,3 @@
-export * from './components/Footer';
-export * from './components/Navbar';
-export * from './components/PrivateRoute';
+export * from './components/footers';
+export * from './components/navbars';
+export * from './components/private-route';

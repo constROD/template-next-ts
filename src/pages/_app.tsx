@@ -1,6 +1,6 @@
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { RootLayout } from 'modules/Layouts';
+import { RootLayout } from 'modules/layouts';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';

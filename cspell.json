@@ -23,7 +23,9 @@
     "mstile",
     "bossrod",
     "bossrodtv",
-    "middlewares"
+    "middlewares",
+    "cardss",
+    "navbars"
   ],
   "ignorePaths": ["node_modules/", "build/", ".husky", "pnpm-lock.yaml", "package.json"]
 }

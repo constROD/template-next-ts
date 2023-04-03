@@ -2,10 +2,11 @@
 
 ## Naming conventions
 
-- `kebab-case` - for all folders/files names except `src/modules/**/components/*` files.
+- `kebab-case` - for all folders/files.
 - `UPPER_CASE` - for constants.
-- `PascalCase` - for classes, types and `src/modules/**/components/*` files.
+- `PascalCase` - for classes and types.
 - `snake_case` - for database tables and columns.
+- `camelCase` - for functions and etc.
 
 ## Folder structure
 
