@@ -1,6 +1,7 @@
 node_modules
 
 Dockerfile
+*.setup.js
 *.config.js
 *.config.ts
 
@@ -8,6 +9,7 @@ Dockerfile
 .vscode
 .next
 out
+coverage
 
 build
 dist

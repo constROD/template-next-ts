@@ -4,6 +4,7 @@
  * * - You must add it to the `.env.example` file.
  * * - You must add it to the `src/shared/constants/environments.ts` file.
  * * - You must add it to the `next.config.js` file.
+ * * - You must add it to the `docker-compose*.yaml` files.
  */
 
 export const STAGES = {
