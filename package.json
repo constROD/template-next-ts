@@ -25,7 +25,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "env:encode": "cat .env | base64 -w 0 > .env-encoded",
-    "env:decode": "echo .env-encoded | base64 -d > .env-decoded",
+    "env:decode": "cat .env-encoded | base64 -d > .env-decoded",
     "format": "prettier --write ./src/**/*.ts{,x}",
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx",
