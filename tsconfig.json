@@ -19,6 +19,6 @@
     "noUncheckedIndexedAccess": true,
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["./next-env.d.ts", "./src", "./tests"],
+  "include": ["./src", "./tests", "./next-env.d.ts"],
   "exclude": ["./node_modules"]
 }
