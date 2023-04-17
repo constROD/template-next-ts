@@ -16,7 +16,8 @@ chmod ug+x .git/hooks/*
 - **(Optional):** Do this if you are using **nvm**.
 
 ```bash
-nvm use or nvm use 16.13.0
+nvm use # For MacOSX and Linux
+nvm use $(cat .nvmrc) # For windows (Git Bash)
 ```
 
 - Create `.env` file.
