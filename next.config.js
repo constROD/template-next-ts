@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-require('dotenv').config();
-
 const forDockerDevelopment = () => {
   if (process.env.MACHINE !== 'docker') return {};
   return {
@@ -17,12 +15,6 @@ const forDockerDevelopment = () => {
 
 module.exports = {
   reactStrictMode: true,
-  /* Environment Variables */
-  env: {
-    // * Add .env environment variables here.
-    PORT: process.env.PORT,
-    STAGE: process.env.STAGE,
-  },
   images: {
     domains: ['unsplash.com'],
   },

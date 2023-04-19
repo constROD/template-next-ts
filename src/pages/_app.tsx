@@ -1,10 +1,11 @@
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RootLayout } from 'modules/layouts';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
-import { STAGE, STAGES } from 'shared/constants/environments';
+import { STAGES, env } from 'shared/constants/environments';
 import '../../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) {
@@ -59,7 +60,7 @@ export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedSta
           <RootLayout>
             <Component {...pageProps} />
           </RootLayout>
-          {STAGE === STAGES.Dev && <ReactQueryDevtools initialIsOpen={false} />}
+          {env.STAGE === STAGES.Dev && <ReactQueryDevtools initialIsOpen={false} />}
         </Hydrate>
       </QueryClientProvider>
     </React.Fragment>
