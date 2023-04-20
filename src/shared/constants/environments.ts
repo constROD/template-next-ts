@@ -14,16 +14,12 @@ export const STAGES = {
   Prod: 'prod',
 } as const;
 
-const envVariables = z.object({
+export const envSchema = z.object({
   STAGE: z.enum([STAGES.Dev, STAGES.Staging, STAGES.Prod]).default(STAGES.Dev),
 });
 
-const serverEnv = envVariables.parse({
-  STAGE: process.env.STAGE,
-});
+const isServer = typeof window === 'undefined';
 
-const clientEnv = envVariables.parse({
-  STAGE: process.env.NEXT_PUBLIC_STAGE,
+export const env = envSchema.parse({
+  STAGE: isServer ? process.env.STAGE : process.env.NEXT_PUBLIC_STAGE,
 });
-
-export const env = typeof window === 'undefined' ? serverEnv : clientEnv;

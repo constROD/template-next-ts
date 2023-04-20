@@ -1,4 +1,6 @@
+import { AUTH_LS } from 'shared/constants/local-storages';
 import { type StoreResponse } from 'shared/types/store';
+import { setLocalStorage } from 'shared/utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
@@ -18,7 +20,7 @@ import { immer } from 'zustand/middleware/immer';
 
 export interface UserStore {
   /* States */
-  email: string | null;
+  user: object | null;
 
   /* Computed States */
   computed: {
@@ -29,35 +31,63 @@ export interface UserStore {
   verifySession: () => StoreResponse;
   login: (email: string) => StoreResponse;
   logout: () => StoreResponse;
+  forgotPassword: (args: { email: string }) => Promise<StoreResponse>;
+  forgotPasswordConfirm: (args: {
+    email: string;
+    code: string;
+    newPassword: string;
+  }) => Promise<StoreResponse>;
+  changePassword: (args: { oldPassword: string; newPassword: string }) => Promise<StoreResponse>;
 }
 
 export const useUserStore = create(
   immer<UserStore>((set, get) => ({
     /* States */
-    email: null,
+    user: null,
 
     /* Computed */
     computed: {
       get isSignedIn() {
-        return !!get().email;
+        return !!get().user;
       },
     },
 
     /* Functions */
-    verifySession: () => {},
+    verifySession: () => {
+      try {
+        setLocalStorage(AUTH_LS.PrevSignedIn, true);
+      } catch (error) {
+        setLocalStorage(AUTH_LS.PrevSignedIn, false);
+      }
+    },
 
     login: (email: string) => {
       set(state => {
-        state.email = email;
+        state.user = { email };
       });
       get().verifySession();
     },
 
     logout: () => {
       set(state => {
-        state.email = null;
+        state.user = null;
       });
       get().verifySession();
+    },
+
+    forgotPassword: async (args: { email: string }) => {
+      // eslint-disable-next-line no-console
+      console.log(args);
+    },
+
+    forgotPasswordConfirm: async (args: { email: string; code: string; newPassword: string }) => {
+      // eslint-disable-next-line no-console
+      console.log(args);
+    },
+
+    changePassword: async (args: { oldPassword: string; newPassword: string }) => {
+      // eslint-disable-next-line no-console
+      console.log(args);
     },
   }))
 );

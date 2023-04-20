@@ -2,7 +2,9 @@ import { useRouter } from 'next/router';
 import React, { useEffect, type ReactNode } from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
+import { AUTH_LS } from 'shared/constants/local-storages';
 import { useUserStore } from 'shared/store';
+import { getLocalStorage } from 'shared/utils';
 
 export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { push: navigate } = useRouter();
@@ -10,11 +12,14 @@ export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) =>
   const verifySession = useUserStore(state => state.verifySession);
 
   useEffectOnce(() => {
-    verifySession();
+    void verifySession();
   });
 
   useEffect(() => {
-    if (!isSignedIn) void navigate(ROUTES.LOGIN);
+    const prevSignedIn = getLocalStorage(AUTH_LS.PrevSignedIn);
+
+    // * If user is not signed in or no previous signed in state, redirect to login page.
+    if (!prevSignedIn && !isSignedIn) void navigate(ROUTES.LOGIN);
   }, [isSignedIn, navigate]);
 
   if (!isSignedIn) return null;
