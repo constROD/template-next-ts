@@ -26,6 +26,7 @@ export interface UserStore {
   };
 
   /* Functions */
+  verifySession: () => StoreResponse;
   login: (email: string) => StoreResponse;
   logout: () => StoreResponse;
 }
@@ -43,16 +44,20 @@ export const useUserStore = create(
     },
 
     /* Functions */
+    verifySession: () => {},
+
     login: (email: string) => {
       set(state => {
         state.email = email;
       });
+      get().verifySession();
     },
 
     logout: () => {
       set(state => {
         state.email = null;
       });
+      get().verifySession();
     },
   }))
 );

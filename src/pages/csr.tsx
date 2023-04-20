@@ -1,4 +1,4 @@
-import Todos from 'modules/todos';
+import { Todos } from 'modules/todos';
 import { useGetTodos } from 'modules/todos/hooks';
 import { type NextPage } from 'next';
 import React from 'react';

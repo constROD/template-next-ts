@@ -1,13 +1,19 @@
-import Login from 'modules/login';
+import { Login } from 'modules/login';
 import { type NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
 import { useUserStore } from 'shared/store';
 
 const LoginPage: NextPage = () => {
   const { push: navigate } = useRouter();
   const isSignedIn = useUserStore(state => state.computed.isSignedIn);
+  const verifySession = useUserStore(state => state.verifySession);
+
+  useEffectOnce(() => {
+    verifySession();
+  });
 
   useEffect(() => {
     if (isSignedIn) void navigate(ROUTES.ABOUT);

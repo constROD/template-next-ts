@@ -1,4 +1,4 @@
-import About from 'modules/about';
+import { About } from 'modules/about';
 import { PageLayout } from 'modules/layouts';
 import { PrivateRoute } from 'modules/partials';
 import { type NextPage } from 'next';

@@ -1,4 +1,4 @@
-import Home from 'modules/home';
+import { Home } from 'modules/home';
 import { type NextPage } from 'next';
 
 const HomePage: NextPage = () => {

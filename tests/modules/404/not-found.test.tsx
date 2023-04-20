@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { NotFound } from 'modules/404';
 import { useRouter } from 'next/router';
 import { ROUTES } from 'shared/constants/commons';
-import NotFound from '.';
 
 // Mock the useRouter hook so we can test its usage
 jest.mock('next/router', () => ({
