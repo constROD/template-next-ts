@@ -15,6 +15,5 @@ services:
       - /app/.next
     environment:
       MACHINE: docker
-      NEXT_SHARP_PATH: ${NEXT_SHARP_PATH}
       PORT: ${PORT}
       STAGE: ${STAGE}

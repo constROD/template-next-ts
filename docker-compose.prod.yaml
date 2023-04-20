@@ -8,6 +8,5 @@ services:
     ports:
       - '${PORT}:80'
     environment:
-      NEXT_SHARP_PATH: ${NEXT_SHARP_PATH}
       PORT: 80
       STAGE: ${STAGE}
