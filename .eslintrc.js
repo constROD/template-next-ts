@@ -64,7 +64,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['./tests/**/*.test.ts', './tests/**/*.test.tsx'],
+      files: ['**/*.test.ts', '**/*.test.tsx'],
       extends: ['plugin:testing-library/react'],
     },
   ],

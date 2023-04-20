@@ -1,4 +1,4 @@
-import Todos from 'modules/todos';
+import { Todos } from 'modules/todos';
 import { TodoService } from 'modules/todos/services';
 import { type Todo } from 'modules/todos/types';
 import { type GetStaticProps, type InferGetStaticPropsType } from 'next';
