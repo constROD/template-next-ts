@@ -16,7 +16,7 @@ export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) =>
   });
 
   useEffect(() => {
-    const prevSignedIn = getLocalStorage(AUTH_LS.PrevSignedIn);
+    const prevSignedIn = getLocalStorage(AUTH_LS.PrevSignedIn) === 'true';
 
     // * If user is not signed in or no previous signed in state, redirect to login page.
     if (!prevSignedIn && !isSignedIn) void navigate(ROUTES.LOGIN);
