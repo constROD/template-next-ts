@@ -20,7 +20,7 @@ import { immer } from 'zustand/middleware/immer';
 
 export interface UserStore {
   /* States */
-  user: object | null;
+  user: { email: string } | null; // TODO: Add actual user info.
 
   /* Computed States */
   computed: {
@@ -29,7 +29,7 @@ export interface UserStore {
 
   /* Functions */
   verifySession: () => StoreResponse;
-  login: (email: string) => StoreResponse;
+  login: (args: { email: string; password: string }) => StoreResponse;
   logout: () => StoreResponse;
   forgotPassword: (args: { email: string }) => Promise<StoreResponse>;
   forgotPasswordConfirm: (args: {
@@ -55,15 +55,17 @@ export const useUserStore = create(
     /* Functions */
     verifySession: () => {
       try {
+        if (!get().user) return; // TODO: Temporary added to simulate the previous signed in state
+        // TODO: Check session and set user state
         setLocalStorage(AUTH_LS.PrevSignedIn, true);
       } catch (error) {
         setLocalStorage(AUTH_LS.PrevSignedIn, false);
       }
     },
 
-    login: (email: string) => {
+    login: (args: { email: string; password: string }) => {
       set(state => {
-        state.user = { email };
+        state.user = { email: args.email };
       });
       get().verifySession();
     },
@@ -73,21 +75,22 @@ export const useUserStore = create(
         state.user = null;
       });
       get().verifySession();
+      setLocalStorage(AUTH_LS.PrevSignedIn, false); // TODO: Temporary added to simulate the previous signed in state
     },
 
     forgotPassword: async (args: { email: string }) => {
       // eslint-disable-next-line no-console
-      console.log(args);
+      console.debug(args);
     },
 
     forgotPasswordConfirm: async (args: { email: string; code: string; newPassword: string }) => {
       // eslint-disable-next-line no-console
-      console.log(args);
+      console.debug(args);
     },
 
     changePassword: async (args: { oldPassword: string; newPassword: string }) => {
       // eslint-disable-next-line no-console
-      console.log(args);
+      console.debug(args);
     },
   }))
 );

@@ -1,22 +1,22 @@
-const isBrowser: boolean = typeof window !== 'undefined';
+import { isServer } from 'shared/constants/commons';
 
 export const setLocalStorage = (key: string, value: unknown) => {
-  if (!isBrowser) return;
+  if (isServer) return;
   localStorage[key] = value;
 };
 
 export const getLocalStorage = (key: string) => {
-  if (!isBrowser) return '';
+  if (isServer) return '';
   if (!localStorage[key]) return '';
   return localStorage[key] as string;
 };
 
-export const getAllLocalStorage = () => {
-  if (!isBrowser) return {};
-  return localStorage as Record<string, unknown>;
+export const listOfLocalStorage = <T = Record<string, unknown>>() => {
+  if (isServer) return {};
+  return localStorage as T;
 };
 
 export const clearLocalStorage = () => {
-  if (!isBrowser) return;
+  if (isServer) return;
   localStorage.clear();
 };

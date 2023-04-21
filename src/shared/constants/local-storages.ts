@@ -1,3 +1,3 @@
 export const AUTH_LS = {
-  PrevSignedIn: 'auth_prev_signed_in',
+  PrevSignedIn: 'auth__prev-signed-in',
 } as const;

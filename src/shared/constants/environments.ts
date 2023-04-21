@@ -7,6 +7,7 @@
  */
 
 import { z } from 'zod';
+import { isServer } from './commons';
 
 export const STAGES = {
   Dev: 'dev',
@@ -17,8 +18,6 @@ export const STAGES = {
 export const envSchema = z.object({
   STAGE: z.enum([STAGES.Dev, STAGES.Staging, STAGES.Prod]).default(STAGES.Dev),
 });
-
-const isServer = typeof window === 'undefined';
 
 export const env = envSchema.parse({
   STAGE: isServer ? process.env.STAGE : process.env.NEXT_PUBLIC_STAGE,

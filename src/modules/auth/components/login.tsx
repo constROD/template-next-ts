@@ -1,51 +1,45 @@
-import { useState, type ChangeEvent } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import { useUserStore } from 'shared/store';
 import { type z } from 'zod';
 import { loginSchema } from '../validations';
 
 export const Login = () => {
-  const defaultValues: z.infer<typeof loginSchema> = {
-    email: '',
-    password: '',
-  };
-
-  const [values, setValues] = useState(defaultValues);
-  const [errors, setErrors] = useState<z.ZodIssue[]>([]);
+  const { handleSubmit, register, formState } = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
   const login = useUserStore(state => state.login);
 
-  const handleLogin = () => {
-    const validated = loginSchema.safeParse(values);
-    if (!validated.success) return setErrors(validated.error.issues);
-    login(validated.data.email);
-  };
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setValues(prev => ({ ...prev, [name]: value }));
-  };
+  const handleLogin = (data: z.infer<typeof loginSchema>) => login(data);
 
   return (
     <div className="flex h-full flex-col items-center justify-center gap-5">
-      <pre>{JSON.stringify(errors, null, 2)}</pre>
-      <div className="flex h-auto w-[500px] flex-col gap-2 border-2 p-4">
-        <input
-          className="border-2 outline-none"
-          name="email"
-          placeholder="Email"
-          defaultValue={values.email}
-          onChange={handleChange}
-        />
-        <input
-          className="border-2 outline-none"
-          name="password"
-          type="password"
-          placeholder="Password"
-          defaultValue={values.password}
-          onChange={handleChange}
-        />
-        <button onClick={handleLogin}>Login</button>
-      </div>
+      <form
+        className="flex h-auto w-[250px] flex-col gap-5 border-2 p-4"
+        onSubmit={handleSubmit(handleLogin)}
+      >
+        <h1>Sign In</h1>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="email">Email:</label>
+          <input id="email" placeholder="" {...register('email')} />
+          {formState.errors?.email?.message && (
+            <p className="text-sm text-red-500">{formState.errors.email.message}</p>
+          )}
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="password">Password:</label>
+          <input id="password" type="password" {...register('password')} />
+          {formState.errors?.password?.message && (
+            <p className="text-sm text-red-500">{formState.errors.password.message}</p>
+          )}
+        </div>
+        <input className="cursor-pointer" type="submit" value="Login" />
+      </form>
     </div>
   );
 };

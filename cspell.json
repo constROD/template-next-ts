@@ -23,7 +23,8 @@
     "mstile",
     "bossrod",
     "bossrodtv",
-    "middlewares"
+    "middlewares",
+    "hookform"
   ],
   "ignorePaths": [
     "./node_modules",
