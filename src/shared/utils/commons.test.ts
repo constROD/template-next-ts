@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { format } from 'date-fns';
 import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/commons';
-import { formatDate, logger, makeImageUrl } from './commons';
+import { formatDate, logger, makeImageUrl, wait } from './commons';
 
 describe('formatDate', () => {
   it('should return an empty string when date is null', () => {
@@ -23,27 +23,42 @@ describe('formatDate', () => {
 });
 
 describe('logger', () => {
-  const originalConsoleLog = console.log;
+  const originalConsoleLog = console.debug;
 
   beforeEach(() => {
-    console.log = jest.fn();
+    console.debug = jest.fn();
   });
 
   afterEach(() => {
-    console.log = originalConsoleLog;
+    console.debug = originalConsoleLog;
   });
 
-  it('should call console.log with correct format', () => {
+  it('should call console.debug with correct format', () => {
     const testData = { path: '/test', event: 'test_event', log: { message: 'test_message' } };
     const date = format(new Date(), 'yyyy/MM/dd hh:mm:ss');
     const expectedMessage = `[${date}]: ${testData.path} (${testData.event}) >> `;
 
     logger(testData);
 
-    expect(console.log).toHaveBeenCalledWith(
+    expect(console.debug).toHaveBeenCalledWith(
       expectedMessage,
       JSON.stringify(testData.log, null, 2)
     );
+  });
+});
+
+describe('wait', () => {
+  test('should wait for the specified time', async () => {
+    const startTime = Date.now();
+    const waitTime = 500; // milliseconds
+
+    await wait(waitTime);
+
+    const endTime = Date.now();
+    const elapsedTime = endTime - startTime;
+
+    expect(elapsedTime).toBeGreaterThanOrEqual(waitTime);
+    expect(elapsedTime).toBeLessThanOrEqual(waitTime + 20);
   });
 });
 

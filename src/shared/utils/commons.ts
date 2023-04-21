@@ -10,8 +10,10 @@ export const formatDate = (date: Date | null, desiredFormat?: string) => {
 export const logger = ({ path, event, log }: { path: string; event: string; log: unknown }) => {
   const date = format(new Date(), 'yyyy/MM/dd hh:mm:ss');
   // eslint-disable-next-line no-console
-  console.log(`[${date}]: ${path} (${event}) >> `, JSON.stringify(log, null, 2));
+  console.debug(`[${date}]: ${path} (${event}) >> `, JSON.stringify(log, null, 2));
 };
+
+export const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const makeImageUrl = ({
   url,
