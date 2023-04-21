@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { format } from 'date-fns';
 import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/commons';
-import { formatDate, logger, makeImageUrl, wait } from './commons';
+import { formatDate, logger, makeImageUrl, wait } from 'shared/utils';
 
 describe('formatDate', () => {
   it('should return an empty string when date is null', () => {
