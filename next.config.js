@@ -1,5 +1,3 @@
-/** @type {import('next').NextConfig} */
-
 const forDockerDevelopment = () => {
   if (process.env.MACHINE !== 'docker') return {};
   return {
@@ -13,6 +11,7 @@ const forDockerDevelopment = () => {
   };
 };
 
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   images: {
