@@ -1,7 +1,5 @@
 FROM node:16-buster-slim
 
-# NOSONAR
-
 # Go to /app directory.
 WORKDIR /app
 
@@ -9,7 +7,7 @@ WORKDIR /app
 RUN chmod -R 775 /app
 
 # Install pnpm globally.
-RUN npm i -g pnpm@7.17.0 --ignore-scripts
+RUN npm install -g pnpm@7.17.0 --ignore-scripts
 
 # Copy all required files from the repository for building the application.
 COPY svgr.config.js /app
@@ -25,7 +23,7 @@ COPY styles /app
 COPY src /app
 
 # Install dependencies and build the application.
-RUN pnpm i
+RUN pnpm install
 RUN pnpm build
 
 # Start the application.

@@ -26,8 +26,7 @@
     "middlewares",
     "hookform",
     "sonarcloud",
-    "constrod",
-    "NOSONAR"
+    "constrod"
   ],
   "ignorePaths": [
     "./node_modules",
