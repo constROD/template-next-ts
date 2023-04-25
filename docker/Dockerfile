@@ -7,7 +7,7 @@ WORKDIR /app
 RUN chmod -R 775 /app
 
 # Install pnpm globally.
-RUN npm i -g pnpm@7.17.0
+RUN npm i -g pnpm@7.17.0 --ignore-scripts
 
 # Copy all required files for installation.
 COPY package.json /app
