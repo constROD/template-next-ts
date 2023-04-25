@@ -25,11 +25,11 @@ dist
 
 !**.example
 
-# Remove the lock below if you're using npm
+# Remove the following line if you want to check in your npm lock file.
 *-lock.json
-# Remove the lock below if you're using pnpm
-*-lock.yaml
-# Remove the lock below if you're using yarn
+# Remove the following line if you want to check in your pnpm lock file.
+# *-lock.yaml
+# Remove the following line if you want to check in your yarn lock file.
 *.lock
 
 logs

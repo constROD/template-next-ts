@@ -28,9 +28,9 @@ export interface UserStore {
   };
 
   /* Functions */
-  verifySession: () => StoreResponse;
-  login: (args: { email: string; password: string }) => StoreResponse;
-  logout: () => StoreResponse;
+  verifySession: () => Promise<StoreResponse>;
+  login: (args: { email: string; password: string }) => Promise<StoreResponse>;
+  logout: () => Promise<StoreResponse>;
   forgotPassword: (args: { email: string }) => Promise<StoreResponse>;
   forgotPasswordConfirm: (args: {
     email: string;
@@ -53,7 +53,7 @@ export const useUserStore = create(
     },
 
     /* Functions */
-    verifySession: () => {
+    verifySession: async () => {
       try {
         if (!get().user) return; // TODO: Temporary added to simulate the previous signed in state
         // TODO: Check session and set user state
@@ -63,18 +63,18 @@ export const useUserStore = create(
       }
     },
 
-    login: (args: { email: string; password: string }) => {
+    login: async (args: { email: string; password: string }) => {
       set(state => {
         state.user = { email: args.email };
       });
-      get().verifySession();
+      await get().verifySession();
     },
 
-    logout: () => {
+    logout: async () => {
       set(state => {
         state.user = null;
       });
-      get().verifySession();
+      await get().verifySession();
       setLocalStorage(AUTH_LS.PrevSignedIn, false); // TODO: Temporary added to simulate the previous signed in state
     },
 

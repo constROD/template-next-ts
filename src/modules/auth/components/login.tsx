@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { useUserStore } from 'shared/store';
+import { logger } from 'shared/utils';
 import { type z } from 'zod';
 import { loginSchema } from '../validations';
 
@@ -15,7 +16,17 @@ export const Login = () => {
 
   const login = useUserStore(state => state.login);
 
-  const handleLogin = (data: z.infer<typeof loginSchema>) => login(data);
+  const handleLogin = async (data: z.infer<typeof loginSchema>) => {
+    try {
+      await login(data);
+    } catch (error) {
+      logger({
+        path: 'src/modules/auth/components/login.ts',
+        event: 'handleLogin',
+        log: error,
+      });
+    }
+  };
 
   return (
     <div className="flex h-full flex-col items-center justify-center gap-5">
