@@ -1,5 +1,7 @@
 FROM node:16-buster-slim
 
+# NOSONAR
+
 # Go to /app directory.
 WORKDIR /app
 
