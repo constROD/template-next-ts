@@ -24,7 +24,8 @@
     "bossrod",
     "bossrodtv",
     "middlewares",
-    "hookform"
+    "hookform",
+    "sonarcloud"
   ],
   "ignorePaths": [
     "./node_modules",

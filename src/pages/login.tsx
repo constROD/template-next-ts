@@ -12,7 +12,7 @@ const LoginPage: NextPage = () => {
   const verifySession = useUserStore(state => state.verifySession);
 
   useEffectOnce(() => {
-    verifySession();
+    void verifySession();
   });
 
   useEffect(() => {

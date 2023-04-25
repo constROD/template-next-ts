@@ -17,3 +17,4 @@ services:
       MACHINE: docker
       PORT: ${PORT}
       STAGE: ${STAGE}
+      NEXT_PUBLIC_STAGE: ${NEXT_PUBLIC_STAGE}

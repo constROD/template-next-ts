@@ -10,3 +10,4 @@ services:
     environment:
       PORT: 80
       STAGE: ${STAGE}
+      NEXT_PUBLIC_STAGE: ${NEXT_PUBLIC_STAGE}
