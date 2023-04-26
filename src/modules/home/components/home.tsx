@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
       <div className="flex h-[267px] w-[267px] items-center justify-center rounded-xl bg-black">
         <BossRODSvg className="mt-10 h-auto w-[80%]" />
       </div>
-      <h1 className="font-['Poppins'] text-2xl font-[600] md:text-4xl">@bossrodtv/create-app</h1>
+      <h1 className="font-['Poppins'] text-2xl font-[600] md:text-4xl">@bossrodtv/cli</h1>
       <div className="flex flex-col items-center gap-5">
         <div className="flex gap-4">
           <button
@@ -47,15 +47,8 @@ export const Home: React.FC = () => {
       <div className="container px-5">
         <p className="mb-3 font-['Poppins'] text-2xl font-[400]">Read more</p>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
-          <Link
-            href="https://github.com/bossrodtv/create-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Card
-              title="Documentation"
-              description="Find more information about @bossrodtv/create-app"
-            />
+          <Link href="https://github.com/bossrodtv/cli" target="_blank" rel="noopener noreferrer">
+            <Card title="Documentation" description="Find more information about @bossrodtv/cli" />
           </Link>
           <Link href="https://github.com/bossrodtv" target="_blank" rel="noopener noreferrer">
             <Card title="OSS" description="Find more about open-source software of @bossrodtv." />
