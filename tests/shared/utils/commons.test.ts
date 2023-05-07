@@ -2,6 +2,7 @@
 import { format } from 'date-fns';
 import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/commons';
 import { formatDate, logger, makeImageUrl, wait } from 'shared/utils';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('formatDate', () => {
   it('should return an empty string when date is null', () => {
@@ -26,7 +27,7 @@ describe('logger', () => {
   const originalConsoleLog = console.debug;
 
   beforeEach(() => {
-    console.debug = jest.fn();
+    console.debug = vi.fn();
   });
 
   afterEach(() => {
@@ -48,7 +49,7 @@ describe('logger', () => {
 });
 
 describe('wait', () => {
-  test('should wait for the specified time', async () => {
+  it('should wait for the specified time', async () => {
     const startTime = Date.now();
     const waitTime = 500; // milliseconds
 

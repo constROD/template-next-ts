@@ -8,4 +8,11 @@
   },
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
+  "eslint.workingDirectories": [{ "mode": "auto" }] /* For Monorepo */,
+  "search.exclude": {
+    "**/node_modules": true,
+    "pnpm-lock.yaml": true,
+    "**/.pnpm-store": true,
+    "**/.sst": true
+  }
 }

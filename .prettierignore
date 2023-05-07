@@ -1,19 +1,22 @@
-node_modules
+# directories
+node_modules/
+dist/
+build/
+coverage/
+.pnpm-store/
 
+# next
+.next/
+out/
+
+# logs
+*.log
+*-debug.log*
+*-error.log*
+
+# miscellaneous
 .eslintcache
-.vscode
-.next
-out
-coverage
-
-build
-dist
-
 .DS_Store
-.env
-.env.*
-.env-*
-.npmrc
 .idea
 *.suo
 *.ntvs*
@@ -23,11 +26,16 @@ dist
 .vercel
 *.tsbuildinfo
 
+# secrets
+.env
+.env.*
+.env-*
+.npmrc
+
+# secret examples
+!**.example
+
+# locks
 *-lock.json
 *-lock.yaml
 *.lock
-
-logs
-*.log
-*-debug.log*
-*-error.log*

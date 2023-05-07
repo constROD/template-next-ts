@@ -1,23 +1,31 @@
-node_modules
+# directories
+node_modules/
+dist/
+build/
+coverage/
+.pnpm-store/
 
-Dockerfile
-*.setup.js
-*.config.js
+# next
+.next/
+out/
+
+# configs
 *.config.ts
+*.config.js
+*.config.json
+*.config.cjs
+*.config.mjs
+*.config.yml
+*.config.yaml
 
+# logs
+*.log
+*-debug.log*
+*-error.log*
+
+# miscellaneous
 .eslintcache
-.vscode
-.next
-out
-coverage
-
-build
-dist
-
 .DS_Store
-.env
-.env.*
-.npmrc
 .idea
 *.suo
 *.ntvs*
@@ -27,20 +35,20 @@ dist
 .vercel
 *.tsbuildinfo
 
+# secrets
+.env
+.env.*
+.env-*
+.npmrc
+
+# secret examples
 !**.example
 
+# locks
 *-lock.json
 *-lock.yaml
 *.lock
 
-logs
-*.log
-*-debug.log*
-*-error.log*
-
+# types
 global.d.ts
 next-env.d.ts
-
-.dockerignore
-.prettierignore
-.eslintignore

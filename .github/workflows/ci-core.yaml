@@ -1,8 +1,11 @@
-name: CI
+name: Scan Core Branch
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - develop
+      - staging
+      - main
 
 jobs:
   test:
@@ -28,10 +31,17 @@ jobs:
       - name: Lint Types
         run: pnpm ci:lint
 
-      - name: Run Tests
+      - name: Run Tests and Generate Coverage
         run: pnpm ci:test
 
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage/
+
   sonarcloud:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,8 +49,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Download Coverage Report
+        uses: actions/download-artifact@v2
+        with:
+          name: coverage
+          path: coverage/
+
+      - name: Cache SonarCloud Packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+          projectBaseDir: ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

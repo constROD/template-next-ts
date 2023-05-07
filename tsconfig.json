@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -17,7 +16,13 @@
     "jsx": "preserve",
     "incremental": true,
     "noUncheckedIndexedAccess": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "modules/*": ["./src/modules/*"],
+      "pages/*": ["./src/pages/*"],
+      "shared/*": ["./src/shared/*"]
+    }
   },
   "include": ["./src", "./tests", "./next-env.d.ts"],
   "exclude": ["./node_modules"]

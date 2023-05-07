@@ -4,7 +4,7 @@ import BossRODSvg from 'shared/assets/svg/bossrod.svg';
 import MinusSvg from 'shared/assets/svg/minus.svg';
 import PlusSvg from 'shared/assets/svg/plus.svg';
 import { ROUTES } from 'shared/constants/commons';
-import { Card } from './card';
+import Card from './card';
 
 export const Home: React.FC = () => {
   const [count, setCount] = useState(0);
