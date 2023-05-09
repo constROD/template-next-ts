@@ -1,5 +1,5 @@
 import { Todos } from 'modules/todos';
-import { TodoService } from 'modules/todos/services';
+import * as TodoService from 'modules/todos/services';
 import { type Todo } from 'modules/todos/types';
 import { type GetStaticProps, type InferGetStaticPropsType } from 'next';
 import React from 'react';

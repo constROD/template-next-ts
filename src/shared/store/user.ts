@@ -1,6 +1,6 @@
 import { AUTH_LS } from 'shared/constants/local-storages';
 import { type StoreResponse } from 'shared/types/store';
-import { setLocalStorage } from 'shared/utils';
+import { setLocalStorage } from 'shared/utils/local-storages';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 

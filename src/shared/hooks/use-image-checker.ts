@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export const useImageChecker = () => {
+export function useImageChecker() {
   const [loading, setLoading] = useState(true);
   const ref = useRef<HTMLImageElement>();
 
@@ -22,4 +22,4 @@ export const useImageChecker = () => {
     }),
     [loading]
   );
-};
+}

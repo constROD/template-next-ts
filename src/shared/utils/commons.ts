@@ -1,21 +1,22 @@
 import { format } from 'date-fns';
 import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/commons';
 
-export const formatDate = (date: Date | null, desiredFormat?: string) => {
+export function formatDate(date: Date | null, desiredFormat?: string) {
   if (!date) return '';
-  const dateFormat = desiredFormat ? desiredFormat : 'yyyy-MM-dd HH:mm:ss xx';
+  const dateFormat = desiredFormat || 'yyyy-MM-dd HH:mm:ss xx';
   return format(date, dateFormat);
-};
+}
 
-export const logger = ({ path, event, log }: { path: string; event: string; log: unknown }) => {
+export function logger({ path, event, log }: { path: string; event: string; log: unknown }) {
   const date = format(new Date(), 'yyyy/MM/dd hh:mm:ss');
   // eslint-disable-next-line no-console
   console.debug(`[${date}]: ${path} (${event}) >> `, JSON.stringify(log, null, 2));
-};
+}
 
-export const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
-export const makeImageUrl = ({
+export function wait(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+export function makeImageUrl({
   url,
   domain,
   version,
@@ -23,4 +24,6 @@ export const makeImageUrl = ({
   url: string;
   domain?: string;
   version?: string;
-}) => `${domain ?? DEFAULT_ASSET_DOMAIN}${url}?v=${version ?? DEFAULT_ASSET_VERSION}`;
+}) {
+  return `${domain ?? DEFAULT_ASSET_DOMAIN}${url}?v=${version ?? DEFAULT_ASSET_VERSION}`;
+}

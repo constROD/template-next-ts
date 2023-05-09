@@ -4,7 +4,7 @@ import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
 import { AUTH_LS } from 'shared/constants/local-storages';
 import { useUserStore } from 'shared/store';
-import { getLocalStorage } from 'shared/utils';
+import { getLocalStorage } from 'shared/utils/local-storages';
 
 export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
   const { push: navigate } = useRouter();

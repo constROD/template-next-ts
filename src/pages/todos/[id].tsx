@@ -1,4 +1,4 @@
-import { TodoService } from 'modules/todos/services';
+import * as TodoService from 'modules/todos/services';
 import { type Todo } from 'modules/todos/types';
 import {
   type GetStaticPaths,
