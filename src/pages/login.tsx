@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
-import { useUserStore } from 'shared/store';
+import { useUserStore } from 'shared/store/user';
 
 const LoginPage: NextPage = () => {
   const { push: navigate } = useRouter();

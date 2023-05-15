@@ -3,7 +3,7 @@ import React, { useEffect, type ReactNode } from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
 import { AUTH_LS } from 'shared/constants/local-storages';
-import { useUserStore } from 'shared/store';
+import { useUserStore } from 'shared/store/user';
 import { getLocalStorage } from 'shared/utils/local-storages';
 
 export const PrivateRoute: React.FC<{ children: ReactNode }> = ({ children }) => {

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { ROUTES } from 'shared/constants/commons';
-import { useUserStore } from 'shared/store';
+import { useUserStore } from 'shared/store/user';
 
 export const Navbar: React.FC = () => {
   const logout = useUserStore(state => state.logout);
