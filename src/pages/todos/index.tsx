@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
   };
 };
 
-const TodosPage = ({ todos }: InferGetStaticPropsType<typeof getStaticProps>) => {
+export default function TodosPage({ todos }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <React.Fragment>
       <h1>ISR Page</h1>
@@ -21,6 +21,4 @@ const TodosPage = ({ todos }: InferGetStaticPropsType<typeof getStaticProps>) =>
       <Todos todos={todos} />
     </React.Fragment>
   );
-};
-
-export default TodosPage;
+}

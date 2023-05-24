@@ -1,8 +1,7 @@
-import { type NextPage } from 'next';
 import Link from 'next/link';
 import { ROUTES } from 'shared/constants/commons';
 
-const SamplePage: NextPage = () => {
+export default function SamplePage() {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3">
       <p className="mb-10 text-center font-['Poppins'] text-3xl font-[500] md:text-5xl">
@@ -35,6 +34,4 @@ const SamplePage: NextPage = () => {
       </Link>
     </div>
   );
-};
-
-export default SamplePage;
+}

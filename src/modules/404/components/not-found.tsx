@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
-import React from 'react';
 import { ROUTES } from 'shared/constants/commons';
 
-export const NotFound: React.FC = () => {
+export function NotFound() {
   const { push: navigate } = useRouter();
 
   return (
@@ -16,4 +15,4 @@ export const NotFound: React.FC = () => {
       </button>
     </div>
   );
-};
+}

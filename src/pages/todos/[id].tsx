@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<{ todo: Todo }> = async (
   };
 };
 
-const TodoPage = ({ todo }: InferGetStaticPropsType<typeof getStaticProps>) => {
+export default function TodoPage({ todo }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
       <h1>Todo {todo.id}</h1>
@@ -49,6 +49,4 @@ const TodoPage = ({ todo }: InferGetStaticPropsType<typeof getStaticProps>) => {
       </ul>
     </div>
   );
-};
-
-export default TodoPage;
+}

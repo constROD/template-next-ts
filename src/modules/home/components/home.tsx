@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BossRODSvg from 'shared/assets/svg/bossrod.svg';
 import MinusSvg from 'shared/assets/svg/minus.svg';
 import PlusSvg from 'shared/assets/svg/plus.svg';
 import { ROUTES } from 'shared/constants/commons';
 import Card from './card';
 
-export const Home: React.FC = () => {
+export function Home() {
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => setCount(count + 1);
@@ -91,4 +91,4 @@ export const Home: React.FC = () => {
       </div>
     </div>
   );
-};
+}

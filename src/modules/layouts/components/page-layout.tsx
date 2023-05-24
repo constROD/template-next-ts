@@ -1,7 +1,7 @@
 import { Footer, Navbar } from 'modules/partials';
-import React, { type ReactNode } from 'react';
+import React from 'react';
 
-export const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+export function PageLayout({ children }: React.PropsWithChildren) {
   return (
     <div>
       <Navbar />
@@ -9,4 +9,4 @@ export const PageLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
       <Footer />
     </div>
   );
-};
+}

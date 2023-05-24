@@ -1,8 +1,5 @@
 import { Home } from 'modules/home';
-import { type NextPage } from 'next';
 
-const HomePage: NextPage = () => {
+export default function HomePage() {
   return <Home />;
-};
-
-export default HomePage;
+}

@@ -4,7 +4,7 @@ import { ROUTES } from 'shared/constants/commons';
 
 type Props = { todos: Todo[] };
 
-export const Todos: React.FC<Props> = ({ todos }) => {
+export function Todos({ todos }: Props) {
   return (
     <ul>
       {todos.map(todo => (
@@ -18,4 +18,4 @@ export const Todos: React.FC<Props> = ({ todos }) => {
       ))}
     </ul>
   );
-};
+}

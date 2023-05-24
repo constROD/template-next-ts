@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import React from 'react';
 import { ROUTES } from 'shared/constants/commons';
 import { useUserStore } from 'shared/store/user';
 
-export const Navbar: React.FC = () => {
+export function Navbar() {
   const logout = useUserStore(state => state.logout);
   const user = useUserStore(state => state.user);
 
@@ -25,4 +24,4 @@ export const Navbar: React.FC = () => {
       </div>
     </div>
   );
-};
+}

@@ -1,5 +1,5 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 
-export const RootLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
+export function RootLayout({ children }: React.PropsWithChildren) {
   return <div className="relative h-full">{children}</div>;
-};
+}

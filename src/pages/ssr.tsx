@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps<{ todos: Todo[] }> = async (
   };
 };
 
-const SSRPage = ({ todos }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+export default function SSRPage({ todos }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <React.Fragment>
       <h1>SSR Page</h1>
@@ -30,6 +30,4 @@ const SSRPage = ({ todos }: InferGetServerSidePropsType<typeof getServerSideProp
       </ul>
     </React.Fragment>
   );
-};
-
-export default SSRPage;
+}

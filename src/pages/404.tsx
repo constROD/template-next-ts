@@ -1,8 +1,5 @@
 import { NotFound } from 'modules/404';
-import { type NextPage } from 'next';
 
-const NotFoundPage: NextPage = () => {
+export default function NotFoundPage() {
   return <NotFound />;
-};
-
-export default NotFoundPage;
+}

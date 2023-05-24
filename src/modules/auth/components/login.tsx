@@ -5,7 +5,7 @@ import { logger } from 'shared/utils/commons';
 import { type z } from 'zod';
 import { loginSchema } from '../validations';
 
-export const Login = () => {
+export function Login() {
   const { handleSubmit, register, formState } = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -53,4 +53,4 @@ export const Login = () => {
       </form>
     </div>
   );
-};
+}

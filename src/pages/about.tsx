@@ -1,9 +1,8 @@
 import { About } from 'modules/about';
 import { PageLayout } from 'modules/layouts';
 import { PrivateRoute } from 'modules/partials';
-import { type NextPage } from 'next';
 
-const AboutPage: NextPage = () => {
+export default function AboutPage() {
   return (
     <PrivateRoute>
       <PageLayout>
@@ -11,6 +10,4 @@ const AboutPage: NextPage = () => {
       </PageLayout>
     </PrivateRoute>
   );
-};
-
-export default AboutPage;
+}
