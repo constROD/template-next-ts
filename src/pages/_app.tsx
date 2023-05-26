@@ -1,5 +1,4 @@
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RootLayout } from 'modules/layouts';
 import { type AppProps } from 'next/app';

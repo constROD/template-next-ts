@@ -36,11 +36,11 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/react-in-jsx-scope': 'off', // Next.js handles this
-    'no-console': 'error',
     '@typescript-eslint/require-await': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-floating-promises': 'warn',
+    '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/consistent-type-imports': [
       'warn',
       {
@@ -58,6 +58,13 @@ module.exports = {
       'error',
       {
         checksVoidReturn: false,
+      },
+    ],
+    'no-console': 'error',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
       },
     ],
   },
