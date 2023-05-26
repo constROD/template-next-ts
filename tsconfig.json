@@ -24,6 +24,6 @@
       "shared/*": ["./src/shared/*"]
     }
   },
-  "include": ["./src", "./tests", "./next-env.d.ts"],
+  "include": ["./src", "./next-env.d.ts"],
   "exclude": ["./node_modules"]
 }

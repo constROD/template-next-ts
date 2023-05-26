@@ -1,17 +1,17 @@
 /* eslint-disable no-console */
 import { format } from 'date-fns';
-import { DEFAULT_ASSET_DOMAIN, DEFAULT_ASSET_VERSION } from 'shared/constants/commons';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { formatDate, logger, makeImageUrl, wait } from './commons';
 
 describe('formatDate', () => {
   it('should return an empty string when date is null', () => {
-    expect(formatDate(null)).toBe('');
+    expect(formatDate(null)).toMatchInlineSnapshot('""');
   });
 
   it('should return a correctly formatted date string', () => {
     const date = new Date('2022-01-01T00:00:00Z');
     const expected = format(date, 'yyyy-MM-dd HH:mm:ss xx');
+
     expect(formatDate(date)).toBe(expected);
   });
 
@@ -19,6 +19,7 @@ describe('formatDate', () => {
     const date = new Date('2022-01-01T00:00:00Z');
     const customFormat = 'yyyy/MM/dd';
     const expected = format(date, customFormat);
+
     expect(formatDate(date, customFormat)).toBe(expected);
   });
 });
@@ -66,15 +67,17 @@ describe('wait', () => {
 describe('makeImageUrl', () => {
   it('should create a correct image URL with default domain and version', () => {
     const url = '/test.jpg';
-    const expectedUrl = `${DEFAULT_ASSET_DOMAIN}${url}?v=${DEFAULT_ASSET_VERSION}`;
-    expect(makeImageUrl({ url })).toBe(expectedUrl);
+
+    expect(makeImageUrl({ url })).toMatchInlineSnapshot('"/assets/test.jpg?v=1.0.0"');
   });
 
   it('should create a correct image URL with custom domain and version', () => {
     const customDomain = 'https://custom.example.com';
     const customVersion = '2.0.0';
     const url = '/test.jpg';
-    const expectedUrl = `${customDomain}${url}?v=${customVersion}`;
-    expect(makeImageUrl({ url, domain: customDomain, version: customVersion })).toBe(expectedUrl);
+
+    expect(
+      makeImageUrl({ url, domain: customDomain, version: customVersion })
+    ).toMatchInlineSnapshot('"https://custom.example.com/test.jpg?v=2.0.0"');
   });
 });
