@@ -23,8 +23,6 @@ nvm use $(cat .nvmrc) # For windows (Git Bash)
 - Create `.env` file.
 - and refer to the `<secret-name>.example` for the required variables.
 
-## Without Docker
-
 - Install dependencies.
 
 ```bash
@@ -44,62 +42,4 @@ pnpm dev
 ```bash
 pnpm build
 pnpm start
-```
-
-## With Docker
-
-**Development Mode:**
-
-- Build container.
-
-```bash
-docker compose build # Build with cache
-docker compose build --no-cache # Build with no cache
-```
-
-- Run container.
-
-```bash
-docker compose up # Run in foreground
-docker compose up -d # Run in background
-```
-
-- Shutdown container.
-
-```bash
-docker compose down # Remove without volumes
-docker compose down -v # Remove with volumes
-```
-
-**Production Mode:**
-
-- Build container.
-
-```bash
-docker compose -f docker-compose.prod.yaml build # Build with cache
-docker compose -f docker-compose.prod.yaml build --no-cache # Build with no cache
-```
-
-- Run container.
-
-```bash
-docker compose -f docker-compose.prod.yaml up # Run in foreground
-docker compose -f docker-compose.prod.yaml up -d # Run in background
-```
-
-- Shutdown container.
-
-```bash
-docker compose -f docker-compose.prod.yaml down # Remove without volumes
-docker compose -f docker-compose.prod.yaml down -v # Remove with volumes
-```
-
-- Access the container.
-
-```bash
-docker exec -it <container_name> bash
-```
-
-```bash
-docker logs <container_name>
 ```
