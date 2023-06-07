@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
-import { AUTH_LS } from 'shared/constants/local-storages';
+import { AUTH_LS } from 'shared/constants/local-storage';
 import { useUserStore } from 'shared/store/user';
-import { getLocalStorage } from 'shared/utils/local-storages';
+import { getLocalStorage } from 'shared/utils/local-storage';
 
 export function PrivateRoute({ children }: React.PropsWithChildren) {
   const { push: navigate } = useRouter();
