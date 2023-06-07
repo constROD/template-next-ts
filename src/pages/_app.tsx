@@ -1,10 +1,10 @@
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { RootLayout } from 'modules/layouts';
 import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import { ENV, STAGES } from 'shared/constants/environments';
+import { RootLayout } from 'shared/ui/layouts';
 import '../../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) {

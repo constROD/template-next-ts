@@ -1,5 +1,5 @@
-import { Footer, Navbar } from 'modules/partials';
 import React from 'react';
+import { Footer, Navbar } from 'shared/ui/partials';
 
 export function PageLayout({ children }: React.PropsWithChildren) {
   return (
