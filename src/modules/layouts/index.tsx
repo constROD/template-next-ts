@@ -1,2 +1,2 @@
-export * from './components/page-layout';
-export * from './components/root-layout';
+export * from './page/page';
+export * from './root/root';

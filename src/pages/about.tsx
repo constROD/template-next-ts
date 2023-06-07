@@ -1,6 +1,6 @@
 import { About } from 'modules/about';
+import { PrivateRoute } from 'modules/auth';
 import { PageLayout } from 'modules/layouts';
-import { PrivateRoute } from 'modules/partials';
 
 export default function AboutPage() {
   return (
