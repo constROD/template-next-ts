@@ -1,4 +1,3 @@
-import * as TodoService from 'modules/todos/services';
 import { type Todo } from 'modules/todos/types';
 import {
   type GetStaticPaths,
@@ -6,10 +5,15 @@ import {
   type GetStaticPropsContext,
   type InferGetStaticPropsType,
 } from 'next';
+import { TodoService } from 'shared/services/todo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const params = { limit: 10 };
-  const todos = await TodoService.list(params);
+  const { data } = await TodoService.list(params);
+
+  /* Mock the records based on the limit */
+  let todos = [...data];
+  if (params?.limit) todos = todos.slice(0, params.limit);
 
   const paths = todos.map(todo => ({
     params: { id: todo.id.toString() },
@@ -30,7 +34,7 @@ export const getStaticProps: GetStaticProps<{ todo: Todo }> = async (
   context: GetStaticPropsContext
 ) => {
   const id = context.params?.id as string;
-  const todo = await TodoService.get(id);
+  const { data: todo } = await TodoService.get(id);
 
   return {
     props: { todo }, // <todo> object will be passed as props in the component.

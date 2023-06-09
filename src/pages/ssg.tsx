@@ -1,14 +1,18 @@
-import * as TodoService from 'modules/todos/services';
 import { type Todo } from 'modules/todos/types';
 import { type GetStaticProps, type InferGetStaticPropsType } from 'next';
 import React from 'react';
+import { TodoService } from 'shared/services/todo';
 
 export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
   const params = { limit: 10 };
-  const todos = await TodoService.list(params);
+  const { data } = await TodoService.list(params);
+
+  /* Mock the records based on the limit */
+  let todos = [...data];
+  if (params?.limit) todos = todos.slice(0, params.limit);
 
   return {
-    props: { todos }, // todos object will be pass as props in the component.
+    props: { todos }, // `todos` object will be pass as props in the component.
     revalidate: 1, // It will update the page every 1 second
   };
 };
