@@ -19,3 +19,14 @@ export const DEFAULT_ASSET_DOMAIN = '/assets' as const;
  * *Increment this version number when you update the production assets.
  */
 export const DEFAULT_ASSET_VERSION = '1.0.0' as const;
+
+export const ERROR_TYPES = {
+  Error: 'Error',
+  SyntaxError: 'SyntaxError',
+  TypeError: 'TypeError',
+  ReferenceError: 'ReferenceError',
+  RangeError: 'RangeError',
+  EvalError: 'EvalError',
+  URIError: 'URIError',
+  AxiosError: 'AxiosError',
+} as const;
