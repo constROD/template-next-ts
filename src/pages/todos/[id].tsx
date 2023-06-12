@@ -5,7 +5,7 @@ import {
   type GetStaticPropsContext,
   type InferGetStaticPropsType,
 } from 'next';
-import { TodoService } from 'shared/services/todo';
+import { TodoService } from 'shared/services/todos';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const params = { limit: 10 };

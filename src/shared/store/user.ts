@@ -1,6 +1,6 @@
 import { AUTH_LS } from 'shared/constants/local-storage';
 import { type StoreResponse } from 'shared/types/store';
-import { setLocalStorage } from 'shared/utils/local-storage';
+import { LocalStorageUtil } from 'shared/utils/local-storage';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
@@ -57,13 +57,13 @@ export const useUserStore = create(
       try {
         if (!get().user) return; // TODO: Temporary added to simulate the previous signed in state
         // TODO: Check session and set user state
-        setLocalStorage(AUTH_LS.PrevSignedIn, true);
+        LocalStorageUtil.set(AUTH_LS.PrevSignedIn, true);
       } catch (error) {
-        setLocalStorage(AUTH_LS.PrevSignedIn, false);
+        LocalStorageUtil.remove(AUTH_LS.PrevSignedIn);
       }
     },
 
-    login: async (args: { email: string; password: string }) => {
+    login: async args => {
       set(state => {
         state.user = { email: args.email };
       });
@@ -75,20 +75,20 @@ export const useUserStore = create(
         state.user = null;
       });
       await get().verifySession();
-      setLocalStorage(AUTH_LS.PrevSignedIn, false); // TODO: Temporary added to simulate the previous signed in state
+      LocalStorageUtil.remove(AUTH_LS.PrevSignedIn); // TODO: Temporary added to simulate the previous signed in state
     },
 
-    forgotPassword: async (args: { email: string }) => {
+    forgotPassword: async args => {
       // eslint-disable-next-line no-console
       console.debug(args);
     },
 
-    forgotPasswordConfirm: async (args: { email: string; code: string; newPassword: string }) => {
+    forgotPasswordConfirm: async args => {
       // eslint-disable-next-line no-console
       console.debug(args);
     },
 
-    changePassword: async (args: { oldPassword: string; newPassword: string }) => {
+    changePassword: async args => {
       // eslint-disable-next-line no-console
       console.debug(args);
     },

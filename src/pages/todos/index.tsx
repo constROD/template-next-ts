@@ -2,7 +2,7 @@ import { Todos } from 'modules/todos';
 import { type Todo } from 'modules/todos/types';
 import { type GetStaticProps, type InferGetStaticPropsType } from 'next';
 import React from 'react';
-import { TodoService } from 'shared/services/todo';
+import { TodoService } from 'shared/services/todos';
 
 export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
   const params = { limit: 10 };

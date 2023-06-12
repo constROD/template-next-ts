@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { TodoService } from 'shared/services/todo';
+import { TodoService } from 'shared/services/todos';
 import { type ErrorInstance } from 'shared/types/commons';
 import { logger } from 'shared/utils/commons';
 

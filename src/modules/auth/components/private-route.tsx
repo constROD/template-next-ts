@@ -4,7 +4,7 @@ import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
 import { AUTH_LS } from 'shared/constants/local-storage';
 import { useUserStore } from 'shared/store/user';
-import { getLocalStorage } from 'shared/utils/local-storage';
+import { LocalStorageUtil } from 'shared/utils/local-storage';
 
 export function PrivateRoute({ children }: React.PropsWithChildren) {
   const { push: navigate } = useRouter();
@@ -16,7 +16,7 @@ export function PrivateRoute({ children }: React.PropsWithChildren) {
   });
 
   useEffect(() => {
-    const prevSignedIn = getLocalStorage(AUTH_LS.PrevSignedIn) === 'true';
+    const prevSignedIn = LocalStorageUtil.get(AUTH_LS.PrevSignedIn) === 'true';
 
     // * If user is not signed in or no previous signed in state, redirect to login page.
     if (!prevSignedIn && !isSignedIn) void navigate(ROUTES.LOGIN);
