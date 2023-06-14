@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
 
 export default function SSGPage({ todos }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <React.Fragment>
+    <>
       <h1>SSG Page</h1>
 
       <ul>
@@ -31,6 +31,6 @@ export default function SSGPage({ todos }: InferGetStaticPropsType<typeof getSta
           </li>
         ))}
       </ul>
-    </React.Fragment>
+    </>
   );
 }

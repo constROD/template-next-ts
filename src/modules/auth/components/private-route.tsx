@@ -1,12 +1,13 @@
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import type { ReactElement } from 'react';
+import { useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
 import { AUTH_LS } from 'shared/constants/local-storage';
 import { useUserStore } from 'shared/store/user';
 import { LocalStorageUtil } from 'shared/utils/local-storage';
 
-export function PrivateRoute({ children }: React.PropsWithChildren) {
+export function PrivateRoute({ children }: { children: ReactElement }) {
   const { push: navigate } = useRouter();
   const isSignedIn = useUserStore(state => state.computed.isSignedIn);
   const verifySession = useUserStore(state => state.verifySession);
@@ -24,5 +25,5 @@ export function PrivateRoute({ children }: React.PropsWithChildren) {
 
   if (!isSignedIn) return null;
 
-  return <React.Fragment>{children}</React.Fragment>;
+  return children;
 }

@@ -1,6 +1,5 @@
 import { Todos } from 'modules/todos';
 import { useGetTodos } from 'modules/todos/hooks';
-import React from 'react';
 
 export default function CSRPage() {
   const params = { limit: 10 };
@@ -9,10 +8,9 @@ export default function CSRPage() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <React.Fragment>
+    <>
       <h1>CSR Page</h1>
-
       <Todos todos={todos} />
-    </React.Fragment>
+    </>
   );
 }

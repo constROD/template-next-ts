@@ -11,7 +11,10 @@ export function useVideoChecker() {
 
   useEffectOnce(() => {
     if (ref.current) {
-      if (ref.current.readyState >= 3) return handleCanPlay();
+      if (ref.current.readyState >= 3) {
+        handleCanPlay();
+        return;
+      }
       ref.current.oncanplay = handleCanPlay;
     }
   });

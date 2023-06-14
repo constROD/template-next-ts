@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <PrivateRoute>
       <PageLayout>
-        <div className="flex h-full items-center justify-center">This is About Page</div>;
+        <div className="flex h-full items-center justify-center">This is About Page</div>
       </PageLayout>
     </PrivateRoute>
   );

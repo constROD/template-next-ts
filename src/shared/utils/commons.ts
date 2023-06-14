@@ -14,7 +14,9 @@ export function logger({ path, event, log }: { path: string; event: string; log:
 }
 
 export function wait(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });
 }
 export function makeImageUrl({
   url,

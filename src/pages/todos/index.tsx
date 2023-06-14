@@ -19,10 +19,10 @@ export const getStaticProps: GetStaticProps<{ todos: Todo[] }> = async () => {
 
 export default function TodosPage({ todos }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <React.Fragment>
+    <>
       <h1>ISR Page</h1>
 
       <Todos todos={todos} />
-    </React.Fragment>
+    </>
   );
 }

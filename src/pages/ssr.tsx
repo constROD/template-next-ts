@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps<{ todos: Todo[] }> = async (
 
 export default function SSRPage({ todos }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <React.Fragment>
+    <>
       <h1>SSR Page</h1>
 
       <ul>
@@ -32,6 +32,6 @@ export default function SSRPage({ todos }: InferGetServerSidePropsType<typeof ge
           </li>
         ))}
       </ul>
-    </React.Fragment>
+    </>
   );
 }

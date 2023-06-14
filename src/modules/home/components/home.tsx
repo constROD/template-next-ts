@@ -39,9 +39,9 @@ export function Home() {
         </div>
         <p className="font-['Poppins'] text-gray-600">
           Counter Playground.{' '}
-          <span className="cursor-pointer hover:underline" onClick={handleReset}>
+          <button className="cursor-pointer hover:underline" onClick={handleReset}>
             Reset
-          </span>
+          </button>
         </p>
       </div>
       <div className="container px-5">

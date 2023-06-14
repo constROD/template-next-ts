@@ -21,7 +21,7 @@ export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedSta
   );
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>Template Next TypeScript</title>
 
@@ -62,6 +62,6 @@ export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedSta
           {ENV.STAGE === STAGES.Dev && <ReactQueryDevtools initialIsOpen={false} />}
         </Hydrate>
       </QueryClientProvider>
-    </React.Fragment>
+    </>
   );
 }
