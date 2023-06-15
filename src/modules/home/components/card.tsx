@@ -5,7 +5,7 @@ type Props = {
   description: string;
 };
 
-function Card({ title, description }: Props) {
+export function Card({ title, description }: Props) {
   return (
     <div className="flex h-full w-full flex-col gap-3 rounded-[5px] border-[1px] border-solid border-[#C8C8C8] px-8 py-10">
       <span className="flex gap-3 font-['Poppins'] text-xl font-[600]">
@@ -15,5 +15,3 @@ function Card({ title, description }: Props) {
     </div>
   );
 }
-
-export default Card;
