@@ -1,5 +1,5 @@
-import { PrivateRoute } from 'modules/auth';
-import { PageLayout } from 'shared/ui/layouts';
+import { PrivateRoute } from 'modules/auth/components/private-route';
+import { PageLayout } from 'shared/components/layouts/page';
 
 export default function AboutPage() {
   return (

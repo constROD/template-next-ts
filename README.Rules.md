@@ -13,7 +13,7 @@
 - `src` - main source code.
 - `src/pages` - page routes (e.g. `login`, `register`, `dashboard`).
 - `src/modules` - modules (e.g. `auth`, `dashboard`).
-- `src/shared` - shared code (e.g. `utils`, `constants`, `types`, `hooks`, `ui`).
+- `src/shared` - shared code (e.g. `utils`, `constants`, `types`, `hooks`, `components`).
 
 ## File Organization
 

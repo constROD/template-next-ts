@@ -1,4 +1,4 @@
-import { Login } from 'modules/auth';
+import { Login } from 'modules/auth/components/login';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
