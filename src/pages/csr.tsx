@@ -1,4 +1,4 @@
-import { Todos } from 'modules/todos';
+import { Todos } from 'modules/todos/components/todos';
 import { useGetTodos } from 'modules/todos/hooks';
 
 export default function CSRPage() {
