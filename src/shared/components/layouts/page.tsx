@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Footer } from '../partials/footer';
 import { Navbar } from '../partials/navbar';
 

@@ -28,7 +28,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.eslint.json'],
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint', 'import'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'import', 'simple-import-sort'],
   rules: {
     'react/prop-types': 'off',
     'react/display-name': 'off',
@@ -37,13 +37,22 @@ module.exports = {
     'react/button-has-type': 'off',
     'react/react-in-jsx-scope': 'off', // Next.js handles this
     'react/jsx-props-no-spreading': 'off',
+    'react/no-array-index-key': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
-    'import/no-self-import': 'off',
-    'import/prefer-default-export': 'off',
     'prefer-promise-reject-errors': 'off',
     'no-param-reassign': 'off',
     'no-void': ['error', { allowAsStatement: true }],
+    'no-undef': 'error',
     'no-console': 'error',
+    'simple-import-sort/imports': 'error',
+    'import/no-self-import': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
     '@typescript-eslint/require-await': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off',
@@ -68,12 +77,7 @@ module.exports = {
         checksVoidReturn: false,
       },
     ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
+
     '@typescript-eslint/naming-convention': [
       'error',
       {

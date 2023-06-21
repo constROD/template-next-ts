@@ -1,3 +1,5 @@
+import '../../styles/globals.css';
+
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { type AppProps } from 'next/app';
@@ -5,7 +7,6 @@ import Head from 'next/head';
 import React from 'react';
 import { RootLayout } from 'shared/components/layouts/root';
 import { ENV, STAGES } from 'shared/constants/environments';
-import '../../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: unknown }>) {
   const [queryClient] = React.useState(
