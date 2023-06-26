@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - Download extension **ESLint** and **Prettier ESLint** in your VSCode.
-- Install **node** 16.14.2
+- Install **node** 18.16.1
 - Install **pnpm** 8.6.1
 
 ---
