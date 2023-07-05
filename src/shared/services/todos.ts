@@ -1,5 +1,5 @@
-import { type Todo } from 'modules/todos/types';
 import { httpClient } from 'shared/utils/http';
+import { type Todo } from 'src/features/todos/types';
 
 export * as TodoService from './todos';
 

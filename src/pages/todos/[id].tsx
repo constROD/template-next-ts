@@ -1,4 +1,3 @@
-import { type Todo } from 'modules/todos/types';
 import {
   type GetStaticPaths,
   type GetStaticProps,
@@ -6,6 +5,7 @@ import {
   type InferGetStaticPropsType,
 } from 'next';
 import { TodoService } from 'shared/services/todos';
+import { type Todo } from 'src/features/todos/types';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const params = { limit: 10 };

@@ -25,7 +25,7 @@ export function Login() {
       await login(data);
     } catch (error) {
       logger({
-        path: 'modules/auth/components/login.ts',
+        path: 'features/auth/components/login.ts',
         event: 'handleLogin',
         log: error,
       });

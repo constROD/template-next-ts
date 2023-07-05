@@ -1,6 +1,6 @@
-import { type Todo } from 'modules/todos/types';
 import { type GetServerSideProps, type InferGetServerSidePropsType } from 'next';
 import { TodoService } from 'shared/services/todos';
+import { type Todo } from 'src/features/todos/types';
 
 export const getServerSideProps: GetServerSideProps<{ todos: Todo[] }> = async () => {
   const params = { limit: 10 };

@@ -23,7 +23,7 @@ export function useGetTodos(params?: { limit: number }) {
       const errorInstance = error as ErrorInstance;
 
       logger({
-        path: 'modules/todos/hooks.ts',
+        path: 'features/todos/hooks.ts',
         event: 'useGetTodos: onError',
         log: errorInstance,
       });
@@ -42,7 +42,7 @@ export function useGetTodo(id: number | string) {
       const errorInstance = error as ErrorInstance;
 
       logger({
-        path: 'modules/todos/hooks.ts',
+        path: 'features/todos/hooks.ts',
         event: 'useGetTodo: onError',
         log: errorInstance,
       });

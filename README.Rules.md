@@ -11,6 +11,6 @@
 ## Folder structure
 
 - `src` - main source code.
-- `src/pages` - page routes (e.g. `login`, `register`, `dashboard`).
-- `src/modules` - modules (e.g. `auth`, `dashboard`).
+- `src/pages` - pages or routes (e.g. `login`, `register`, `dashboard`).
+- `src/features` - features (e.g. `auth`, `dashboard`).
 - `src/shared` - shared code (e.g. `utils`, `constants`, `types`, `hooks`, `components`).

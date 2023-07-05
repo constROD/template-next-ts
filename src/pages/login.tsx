@@ -1,9 +1,9 @@
-import { Login } from 'modules/auth/components/login';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/commons';
 import { useUserStore } from 'shared/store/user';
+import { Login } from 'src/features/auth/components/login';
 
 export default function LoginPage() {
   const { push: navigate } = useRouter();

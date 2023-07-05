@@ -1,6 +1,6 @@
-import { type Todo } from 'modules/todos/types';
 import Link from 'next/link';
 import { ROUTES } from 'shared/constants/commons';
+import { type Todo } from 'src/features/todos/types';
 
 type Props = { todos: Todo[] };
 

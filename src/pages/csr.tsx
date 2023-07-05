@@ -1,5 +1,5 @@
-import { Todos } from 'modules/todos/components/todos';
-import { useGetTodos } from 'modules/todos/hooks';
+import { Todos } from 'src/features/todos/components/todos';
+import { useGetTodos } from 'src/features/todos/hooks';
 
 export default function CSRPage() {
   const params = { limit: 10 };
