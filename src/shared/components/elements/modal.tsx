@@ -66,14 +66,14 @@ type UseModalProps = {
  * - `isOpen`: A boolean indicating whether the modal is open.
  *
  * @example
- * const { renderModal, open, close } = useModal({
+ * const { renderModal, isOpen, open, close } = useModal({
  *   component: () => <div>Modal Content</div>,
  *   disableBackdropClick: false,
  * });
  *
  * return (
  *   <section className="bg-base-100 px-8">
- *     {renderModal}
+ *     {isOpen & renderModal}
  *     <button onClick={open}>Open Modal</button>
  *     <button onClick={close}>Close Modal</button>
  *   </section>
