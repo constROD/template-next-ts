@@ -1,14 +1,32 @@
-import axios from 'axios';
-import { HTTP_RESPONSES } from 'shared/constants/http';
+import axios, { type InternalAxiosRequestConfig } from 'axios';
+import { X_HEADERS } from 'shared/constants/http';
+import { AUTH_LS } from 'shared/constants/local-storage';
+
+import { LocalStorageUtil } from './local-storage';
+
+function setAuthHeaders(request: InternalAxiosRequestConfig) {
+  const accessToken = LocalStorageUtil.get(AUTH_LS.AccessToken);
+  request.headers[X_HEADERS.AccessToken] = accessToken;
+}
+
+function defaultErrorResponse() {
+  return {
+    data: {
+      statusCode: 500,
+      message: `Something went wrong. Please try again.`,
+    },
+  };
+}
 
 const axiosInstance = axios.create({ baseURL: '' });
 
-const defaultErrorResponse = () => ({
-  data: {
-    ...HTTP_RESPONSES.ServerError,
-    message: `Something went wrong. Please try again.`,
+axiosInstance.interceptors.request.use(
+  request => {
+    setAuthHeaders(request);
+    return request;
   },
-});
+  error => Promise.reject(error)
+);
 
 axiosInstance.interceptors.response.use(
   res => res,
