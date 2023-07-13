@@ -101,8 +101,8 @@ export function useModal({ component, disableBackdropClick }: UseModalProps) {
 
   return {
     renderModal,
+    isOpen,
     close,
     open,
-    isOpen,
   };
 }
