@@ -71,11 +71,9 @@ type UseModalProps = {
  *   disableBackdropClick: false,
  * });
  *
- * const renderModalRef = renderModal();
- *
  * return (
  *   <section className="bg-base-100 px-8">
- *     {renderModalRef}
+ *     {renderModal}
  *     <button onClick={open}>Open Modal</button>
  *     <button onClick={close}>Close Modal</button>
  *   </section>
