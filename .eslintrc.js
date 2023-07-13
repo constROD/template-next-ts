@@ -38,6 +38,12 @@ module.exports = {
     'react/react-in-jsx-scope': 'off', // Next.js handles this
     'react/jsx-props-no-spreading': 'off',
     'react/no-array-index-key': 'off',
+    'react/no-unstable-nested-components': [
+      'error',
+      {
+        allowAsProps: true,
+      },
+    ],
     'jsx-a11y/label-has-associated-control': 'off',
     'prefer-promise-reject-errors': 'off',
     'no-param-reassign': 'off',
