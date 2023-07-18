@@ -6,7 +6,7 @@ type ModalProps = {
   isOpen: boolean;
   disableBackdropClick: boolean;
   close: () => void;
-  children: () => JSX.Element;
+  children: JSX.Element;
 };
 
 function Modal({ children, isOpen, disableBackdropClick, close }: ModalProps) {
@@ -27,11 +27,10 @@ function Modal({ children, isOpen, disableBackdropClick, close }: ModalProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
+          <div className="fixed inset-0 bg-black bg-opacity-75" />
         </Transition.Child>
-
         <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center px-4 text-center">
+          <div className="flex min-h-full items-center justify-center px-4 text-center md:px-8 lg:px-12 xl:px-16">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -41,9 +40,7 @@ function Modal({ children, isOpen, disableBackdropClick, close }: ModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-auto transform shadow-xl transition-all">
-                {children}
-              </Dialog.Panel>
+              <Dialog.Panel className="transform shadow-xl transition-all">{children}</Dialog.Panel>
             </Transition.Child>
           </div>
         </div>
@@ -54,6 +51,8 @@ function Modal({ children, isOpen, disableBackdropClick, close }: ModalProps) {
 
 type UseModalProps = {
   component: () => JSX.Element;
+  header?: () => JSX.Element;
+  footer?: () => JSX.Element;
   disableBackdropClick?: boolean;
 };
 
@@ -68,18 +67,26 @@ type UseModalProps = {
  * @example
  * const { renderModal, isOpen, open, close } = useModal({
  *   component: () => <div>Modal Content</div>,
+ *   header: () => <div>Modal Header</div>,
+ *   footer: () => <div>Modal Footer</div>,
  *   disableBackdropClick: false,
  * });
  *
  * return (
  *   <section className="bg-base-100 px-8">
- *     {isOpen & renderModal}
+ *     {isOpen && renderModal} // only do this if you want to destroy the modal on close
+ *     {renderModal} // only do this if you don't want to destroy the modal on close
  *     <button onClick={open}>Open Modal</button>
  *     <button onClick={close}>Close Modal</button>
  *   </section>
  * );
  */
-export function useModal({ component, disableBackdropClick }: UseModalProps) {
+export function useModal({
+  component: Component,
+  header: Header,
+  footer: Footer,
+  disableBackdropClick,
+}: UseModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const close = useCallback(() => setIsOpen(false), []);
@@ -95,8 +102,16 @@ export function useModal({ component, disableBackdropClick }: UseModalProps) {
   );
 
   const renderModal = useMemo(
-    () => <Modal {...modalProps}>{component}</Modal>,
-    [modalProps, component]
+    () => (
+      <Modal {...modalProps}>
+        <div className="w-auto overflow-hidden">
+          {Header && <Header />}
+          <Component />
+          {Footer && <Footer />}
+        </div>
+      </Modal>
+    ),
+    [modalProps, Component, Header, Footer]
   );
 
   return {
