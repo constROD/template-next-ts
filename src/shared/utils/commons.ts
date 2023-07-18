@@ -22,13 +22,13 @@ export function wait(ms: number) {
 }
 
 export function makeImageUrl({
-  url,
-  domain,
-  version,
+  path,
+  domain = DEFAULT_ASSET_DOMAIN,
+  version = DEFAULT_ASSET_VERSION,
 }: {
-  url: string;
+  path: string;
   domain?: string;
   version?: string;
 }) {
-  return `${domain ?? DEFAULT_ASSET_DOMAIN}${url}?v=${version ?? DEFAULT_ASSET_VERSION}`;
+  return `${domain}${path}?v=${version}`;
 }

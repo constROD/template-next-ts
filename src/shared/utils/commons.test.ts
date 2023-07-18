@@ -63,18 +63,18 @@ describe('wait', () => {
 
 describe('makeImageUrl', () => {
   it('should create a correct image URL with default domain and version', () => {
-    const url = '/test.jpg';
+    const path = '/test.jpg';
 
-    expect(CommonUtil.makeImageUrl({ url })).toMatchInlineSnapshot('"/assets/test.jpg?v=1.0.0"');
+    expect(CommonUtil.makeImageUrl({ path })).toMatchInlineSnapshot('"/assets/test.jpg?v=1.0.0"');
   });
 
   it('should create a correct image URL with custom domain and version', () => {
     const customDomain = 'https://custom.example.com';
     const customVersion = '2.0.0';
-    const url = '/test.jpg';
+    const path = '/test.jpg';
 
     expect(
-      CommonUtil.makeImageUrl({ url, domain: customDomain, version: customVersion })
+      CommonUtil.makeImageUrl({ path, domain: customDomain, version: customVersion })
     ).toMatchInlineSnapshot('"https://custom.example.com/test.jpg?v=2.0.0"');
   });
 });
